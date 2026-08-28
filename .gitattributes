@@ -1,0 +1,8 @@
+# Normalize line endings to LF in the repository.
+#
+# Without this, Windows checkouts convert LF to CRLF on disk, and every export
+# from build-plugin.ps1 then shows all 1365 lines of Eva's SKILL.md as modified
+# even when nothing changed. That makes the diff useless for review, which
+# matters because reviewing the diff is the safeguard before publishing to a
+# public marketplace.
+* text=auto eol=lf
