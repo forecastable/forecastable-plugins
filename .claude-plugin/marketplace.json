@@ -1,0 +1,29 @@
+{
+  "name": "forecastable",
+  "owner": {
+    "name": "Forecastable",
+    "url": "https://forecastable.com"
+  },
+  "description": "Partnerships and co-sell plugins from Forecastable.",
+  "plugins": [
+    {
+      "name": "forecastable-eva",
+      "displayName": "Eva, AI Partner Manager Assistant",
+      "source": "./plugins/forecastable-eva",
+      "description": "Eva, your AI Partner Manager. Turns partner decisions into work that actually happens: meeting prep, play assignment and forwardable handoffs, partner success plans, commitment tracking and chases, staleness sweeps, and a daily triage of action items into plans. Drafts everything for your approval and never sends on your behalf.",
+      "author": {
+        "name": "Forecastable",
+        "url": "https://forecastable.com"
+      },
+      "homepage": "https://forecastable.com",
+      "category": "productivity",
+      "keywords": [
+        "partnerships",
+        "co-sell",
+        "partner-management",
+        "accountability",
+        "crm"
+      ]
+    }
+  ]
+}
