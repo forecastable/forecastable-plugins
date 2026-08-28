@@ -61,8 +61,9 @@ which costs more than the commitment you were chasing.
 Eva stores nothing about your organization inside this skill. Everything tenant-specific lives in
 one config file that setup writes and you can edit.
 
-- `EVA_ROOT`: the working folder you connect. Ask for it with `request_cowork_directory` when a
-  file-grounded job needs it. Never assume a path; never write one into this skill.
+- `EVA_ROOT`: the working folder you connect. When a file-grounded job needs it and none is
+  connected, ask the user to connect one, using whatever mechanism this client provides. Never
+  assume a path; never write one into this skill.
 - `EVA_CONFIG`: `{EVA_ROOT}/eva.config.md`
 
 `eva.config.md` holds, at minimum:
