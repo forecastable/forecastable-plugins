@@ -83,6 +83,19 @@ is absent, say which key and what it unlocks, then continue with the jobs that d
 Any value specific to one organization belongs in the config file. This rule is what makes Eva
 installable by anyone; breaking it once means the next tenant inherits the previous tenant's data.
 
+### Learned rules come first, and they outrank this file
+
+A learned-rules skill may be installed alongside Eva, carrying corrections a user has already made.
+Read it before anything else on every run, including before the sources below. Where a learned rule
+contradicts a default in this skill, **the learned rule wins**, and you say which one fired and why.
+
+That precedence is the whole point of the loop. A correction someone took the trouble to make, which
+then loses to a default on the next run, teaches them that correcting Eva does not work, and they
+stop. Re-making a corrected mistake costs more than the mistake did the first time.
+
+If no learned-rules skill is installed, proceed without one and say nothing about it. Its absence is
+a normal configuration, not a finding.
+
 ### What to read, by job
 
 All of these are optional. Eva works from Forecastable data alone; these files make her sharper
@@ -1080,11 +1093,18 @@ If there were no customer calls yesterday, say exactly that in two lines and sto
 
 ### 7.8 Learned routing rules
 
-When the reviewer corrects a routing, do three things: fix the misfiled items in Forecastable, add the rule
-here via `save_skill` (overwrite, keeping all other content), and confirm both in the reply. Rules
-are append-only, dated, and specific.
+When the reviewer corrects a routing, do three things: fix the misfiled items in Forecastable, write
+the correction to the learned-rules file that ships alongside Eva, and confirm both in the reply.
+Rules are append-only, dated, and specific enough to fire again.
 
-- (none yet)
+**Never write a learned rule into this skill body.** This file is the same for every organization
+that installs Eva, so a rule captured here reaches all of them, and a rule that names your partners
+or your people would reach them too. The learned-rules file is the destination; this section only
+says so. Re-read that file immediately before appending, because more than one session may be
+writing it on the same day, and append rather than rewriting.
+
+If no learned-rules file is installed, say so in the run report and put the correction in front of a
+human. Never drop it silently, and never fall back to editing this skill.
 
 ---
 
