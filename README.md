@@ -132,6 +132,17 @@ escalates judgment calls to your partnerships lead rather than guessing.
 Eva reads your live Forecastable workspace, and Crossbeam when your organization
 has it connected.
 
+### HubSpot setup for Forecastable (`forecastable-hubspot-setup`)
+
+Ships inside the same plugin. The standard for configuring a HubSpot portal
+that Forecastable syncs from: the associated company carries the prospect, a
+property carries the referring partner, lead source is mirrored on the Lead and
+Deal objects with one internal name, sync filters match the records meant to
+sync, and live properties are changed by a protocol rather than by hand.
+
+Hand it to your HubSpot admin as-is, or say `Is our HubSpot configured for
+Forecastable?` and Eva audits the portal against it.
+
 ## Support
 
 Questions, problems, or requests: [forecastable.com](https://forecastable.com)

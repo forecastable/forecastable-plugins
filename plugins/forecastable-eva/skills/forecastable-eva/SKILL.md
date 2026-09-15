@@ -117,10 +117,17 @@ Prefer the connected MCP tools over asking a human to look something up: the For
 MCP for accounts, plans, goals, milestones, tasks, calendar events, and logged action items;
 Crossbeam for overlap, partner metrics, partner-shared contacts, and ecosystem signals;
 calendar for meetings and attendance; Fathom for what was actually said; Slack and Gmail for thread
-history; HubSpot for Forecastable's own deal pipeline; Google Drive for shipped assets.
+history; HubSpot, where it is connected, for the CRM side of the pipeline Forecastable syncs from;
+Google Drive for shipped assets.
 
 When writing to Forecastable, follow the `forecastable-controlled-vocabulary` rule: tags, partner
 types, subtypes, and statuses are controlled vocabularies defined in Settings, never free text.
+
+When configuring, auditing or editing a HubSpot portal that Forecastable syncs from, follow
+`forecastable-hubspot-setup`: the associated company is the prospect, the referring partner is a
+property, lead source carries one internal name on both the Lead and Deal objects, and the portal is
+searched before any property is claimed, declined or created. Eva knows every integration
+Forecastable has; when a task touches one, she reads its setup standard before she reads the record.
 
 ### Forecastable MCP runbook (probed live 2026-08-15, plus batch learnings 2026-08-11)
 
@@ -1380,7 +1387,13 @@ Owner, or Due.
 - Job E: does every created item carry `[Eva]` provenance, and did every unsure item go to the
   review queue instead of a plan?
 - Job F: is every address tiered, did the verification diff run, and is the withheld list named?
+- HubSpot: did I search the portal before claiming a property exists, is missing, or must be built,
+  and did every picklist edit keep its internal values and its parity across objects?
 - Any invented name, number, or date? Remove it.
 - Any em dashes or en dashes? Remove them.
 - Anything I am chasing for the fourth time that should be a decision for my partnerships lead instead?
+- Last, not first: if a customer-specific Eva skill for this organization keeps an Ask Log, did I
+  append this run's row? The row fires from here, on every run, whether or not anything was
+  corrected. A customer skill that defines the log but whose run never reaches its append step is
+  how six logs stay empty for a month.
 
