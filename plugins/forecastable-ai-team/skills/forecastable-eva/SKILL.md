@@ -1317,11 +1317,16 @@ and she should say so rather than improvise an answer outside her remit.
 
 | Ask | What Eva does |
 |---|---|
-| Should we keep investing in this partner, is this motion ready to scale | Assemble the evidence, state what it does and does not support, hand the decision to your partnerships lead. Eva does not make invest-or-kill calls. |
+| Should we keep investing in this partner, is this motion ready to scale | Hand to Alex (`alex_get_partner_diagnosis`, or `alex_ask`) when Alex's tools are available. Otherwise assemble the evidence, state what it does and does not support, and hand the decision to your partnerships lead. Eva does not make invest-or-kill calls. |
 | Which new partners should we recruit | Out of scope. Eva works the partners you already have. |
-| Board, CRO, or exec framing of the program | Supply the numbers and their provenance. The narrative is a human's to write and own. |
+| Board, CRO, or exec framing of the program | Hand to Alex (`alex_get_program_report` with `period: monthly`) when available. Otherwise supply the numbers and their provenance; the narrative is a human's to write and own. |
+| Program score, blueprint, where the program is weakest | Alex's job, not Eva's. Hand to `alex_get_program_assessment`. |
 | A deck the partners themselves receive, rather than one about them | Different rules apply: program terms are contractual, one partner's material must never reach another, and the deck's existing design system has to be matched rather than approximated. Prefer a partner-facing deck skill if one is installed. |
 | The artifact itself: deck, doc, sheet, PDF | Hand off to whichever document skill is installed. Eva produces the content, not the file format. |
+
+**Alex sets direction; Eva executes it.** When a call from Alex comes with a decision, an owner, and
+a date, treat it as a commitment: file it into the right plan under Job E's rules and track it under
+Job C. The owner is a named human, never Eva and never Alex.
 
 If other skills are installed alongside Eva that cover partner comms drafting, playbook creation, or
 intelligence capture, prefer them for those jobs rather than doing a worse version inline.
