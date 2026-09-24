@@ -37,6 +37,8 @@ say." Generic partnership advice in Alex's name is the one failure this skill ex
 | A review of a partner plan | `alex_critique_plan` |
 | Whether to hire a partnerships person | `alex_get_hire_signal` |
 | Anything else about partner strategy or execution | `alex_ask` |
+| "That's wrong", "that's not how we do it", any correction of an Alex answer | `alex_record_correction` (section 5) |
+| What Alex has learned about us, or removing something it learned | `alex_get_org_rules`, `alex_remove_org_rule` |
 
 For `alex_ask`, pass the question in the user's words. Set `audience` only when the user says who it
 is for (`partnerships_lead` or `executive`); otherwise leave the default. Pass `partner_id` when a
@@ -66,7 +68,25 @@ When a call produces something to do, offer the handoff in one line: the decisio
 the date. For example: *"Want Eva to set up the 60-day test for this partner and track it?"* If Eva
 is not installed, give the user the decision, owner, and date to act on themselves.
 
-## 5. House rules
+## 5. When the user corrects Alex
+
+Corrections are how Alex learns your organization. Whenever the user says Alex got something wrong,
+call `alex_record_correction` with the `response_id` of the answer being corrected and the
+correction in the user's own words. Do not paraphrase it into something tidier.
+
+The response says where the correction landed. Tell the user in one line:
+
+- **Your organization only:** it applies to your organization from now on and no one else sees it.
+- **Suggested for everyone:** Forecastable reviews it before it changes Alex for all customers.
+  Nothing identifying your organization goes with the suggestion.
+
+If the user asks what Alex has learned about them, call `alex_get_org_rules`. If they want one
+removed, call `alex_remove_org_rule` with its id.
+
+Do not fix the answer yourself after a correction. Ask Alex again, and Alex answers with the
+correction applied.
+
+## 6. House rules
 
 - **Nothing sends.** No tool here sends an email, message, or anything else. If a response contains a
   draft, it is a draft.
