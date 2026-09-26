@@ -4,13 +4,15 @@ Partnerships and co-sell plugins for Claude, from [Forecastable](https://forecas
 
 ## Before you install
 
-Eva works from your live Forecastable data, so two things need to be true first.
+Eva and Alex work from your live Forecastable data, so two things need to be true first.
 
 1. **You have a Forecastable account**, and you can sign in to it.
 2. **The Forecastable connector is set up in Claude.** Eva reads your accounts,
    plans and calendar through it. Without it she can still talk, but she cannot
    tell you anything about your actual partners. If you are not sure whether it
-   is connected, ask us and we will check with you.
+   is connected, ask us and we will check with you. Alex also has to be
+   switched on for your Forecastable workspace. If it is not yet, Alex says so
+   and Eva still works.
 
 Two things that are **optional**:
 
@@ -22,13 +24,26 @@ Two things that are **optional**:
 Nothing else to prepare. There is no configuration file to write, no IDs to look
 up, and no setup form. Eva does that part herself on the first run.
 
+## Already using Eva?
+
+Eva used to install as `forecastable-eva`. She now ships with Alex in one plugin,
+`forecastable-ai-team`. Swap once:
+
+```
+/plugin uninstall forecastable-eva@forecastable
+/plugin marketplace update forecastable
+/plugin install forecastable-ai-team@forecastable
+```
+
+Eva's config and everything she has learned carry over. Start a new chat after.
+
 ## Install
 
 In Claude Code:
 
 ```
 /plugin marketplace add forecastable/forecastable-plugins
-/plugin install forecastable-eva@forecastable
+/plugin install forecastable-ai-team@forecastable
 ```
 
 If the install summary says `Run /reload-plugins to activate.`, run that command.
@@ -37,7 +52,7 @@ From the command line instead:
 
 ```bash
 claude plugin marketplace add forecastable/forecastable-plugins
-claude plugin install forecastable-eva@forecastable
+claude plugin install forecastable-ai-team@forecastable
 ```
 
 ## First run, about two minutes
@@ -116,7 +131,25 @@ background. To refresh immediately:
 
 ## What is in here
 
-### Eva, AI Partner Manager Assistant (`forecastable-eva`)
+One plugin, `forecastable-ai-team`, carries both members of the AI team.
+
+### Alex, AI Chief Partnerships Officer
+
+Alex assesses your partner program against the Valuation Certainty Blueprint:
+three levers, nine accelerators, three outcomes, and the zone your program sits
+in. Every score says whether it was measured from your data or self-reported.
+
+Alex also reports what moved each week for your partnerships lead and each
+month for your executives, diagnoses individual partners, critiques partner
+plans, says whether it is time to hire, and answers hard partnership questions
+with a clear call and what would change it.
+
+Alex assesses and recommends. Eva executes. When Alex makes a call, Eva can set
+up the work and track it.
+
+Try: `Ask Alex where our program is weakest.`
+
+### Eva, AI Partner Manager Assistant
 
 Eva is the accountability layer for a partnership: she makes sure the people on
 both sides who said they would do something actually do it, including the people
