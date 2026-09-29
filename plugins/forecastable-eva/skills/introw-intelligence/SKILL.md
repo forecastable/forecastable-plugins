@@ -25,9 +25,25 @@ Everything you know lives in the reference files below. Read the one the questio
 
 ## 1. How you reach the customer's Introw (pick the first that works)
 
-1. **Introw MCP** (official, OAuth, acts as the signed-in user). If Introw tools are present, use them.
-   MCP calls do not spend the customer's Introw API credits. Tool names are not published; list them
-   before assuming.
+1. **Introw MCP** (official, OAuth, acts as the signed-in user; server name `Introw_PRM`). If its
+   tools are present, use them. MCP calls do not spend the customer's Introw API credits. Tools
+   (verified 2026-09-29):
+   - Read: `search_partners`, `search_crm_objects`, `search_form_submissions`,
+     `search_partner_tasks`, `search_partner_activity`, `get_partner_goals`,
+     `get_partner_tier_information`, `get_commission_information`,
+     `get_marketing_funds_information`, `prepare_partner_business_review`, `find_relevant_content`,
+     `list_assets`, `list_asset_folders`, `list_courses`, `list_certificates`,
+     `list_course_enrollments`, `list_issued_certificates`.
+   - Write, each needs an explicit yes in chat for that action: `process_form_submission`
+     (accept is final), `add_partner_comment` and `create_partner_task` (partner-facing, may notify),
+     `update_partner_task`, `update_partner_fields`, `update_crm_object_properties` (syncs to the CRM),
+     `submit_partner_form`, `upsert_asset`, `upsert_asset_folder` (archiving hides content from every
+     partner), `upsert_course`, `create_asset_upload`, `create_scorm_upload`.
+   - Not in the MCP (browser only): integrations and their status, Crossbeam record-export meter,
+     team and roles, segments, notification settings, experiences and portal publishing,
+     announcements, forms builder and approval gate mode, workflows, CPQ products, company settings.
+   - `search_partners` returns every partner with phase, tier, manager, experience and last activity
+     in one call: the fastest start for any audit.
 2. **Browser** in the customer's authenticated session at `app.introw.io`. Use the route map in
    section 12.1 to go straight to the page. Read with page text, not screenshots, wherever possible.
 3. **Public API** only if the customer's own developer has set it up. It spends API credits
