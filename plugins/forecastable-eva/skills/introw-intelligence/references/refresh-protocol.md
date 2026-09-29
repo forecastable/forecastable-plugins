@@ -2,6 +2,10 @@
 
 Cadence: monthly, first week. Writes to the Project at `claude/introw/`. Never edits a customer tenant.
 
+0. **Rebuild the verbatim corpus.** Re-download `https://docs.introw.io/llms-full.txt` and every
+   article in `https://support.introw.io/sitemap.xml`, regenerate `references/docs/`,
+   `references/help-center/` and `corpus-index.md` the same way (split docs by feature path, strip HTML
+   from help articles, scrub dashes). Diff page titles against last month and list new or removed pages.
 1. **Release notes.** Read the newest monthly release note on docs.introw.io (release notes section)
    and the Product Updates collection on support.introw.io. Add each shipped item to section 5
    (Changelog) with month and source tag. If an item changes a limit, a plan inclusion, a menu path or
