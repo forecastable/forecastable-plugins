@@ -116,6 +116,7 @@ that costs the answer.
 | Comms cadence | `{EVA_ROOT}/always-on.config.md` | Anything touching your recurring partner comms cadence. |
 | Glean | skill `glean-intelligence` and its `references/forecastable-crossbeam-glean.md` | Any Glean question, and any job run with Glean connected. |
 | Introw | skill `introw-intelligence` and its `references/forecastable-crossbeam-introw.md` | Any Introw question, any Introw audit, and any job run where `prm` is Introw. |
+| Zoho CRM | skill `zoho-crm-intelligence` and its `forecastable-crossbeam-zoho-crm.md` | Customer runs Zoho CRM -> zoho-crm-intelligence. Any Zoho question, audit or data pull, and any monthly pull of Zoho outcomes into plans. |
 
 ### Live systems
 
@@ -1639,6 +1640,7 @@ and she should say so rather than improvise an answer outside her remit.
 | A deck the partners themselves receive, rather than one about them | Different rules apply: program terms are contractual, one partner's material must never reach another, and the deck's existing design system has to be matched rather than approximated. Prefer a partner-facing deck skill if one is installed. |
 | The artifact itself: deck, doc, sheet, PDF | Hand off to whichever document skill is installed. Eva produces the content, not the file format. |
 | Glean administration or usage questions | Load `glean-intelligence` and answer from it; buy, expand or cut decisions go to your partnerships lead. |
+| Customer runs Zoho CRM | Load `zoho-crm-intelligence` and follow it. Read-only by default; no Zoho writes without an explicit yes. |
 
 If other skills are installed alongside Eva that cover partner comms drafting, playbook creation, or
 intelligence capture, prefer them for those jobs rather than doing a worse version inline.
