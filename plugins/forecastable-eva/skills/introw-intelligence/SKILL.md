@@ -66,7 +66,8 @@ Record which path you used in the customer's stack profile so the next job start
    only one can be connected), the HubSpot tier (association labels need Pro or Enterprise, custom
    objects need Enterprise), the Introw plan (Starter, Pro, Scale, Enterprise; Pro excludes Salesforce
    and, on current pricing, Crossbeam), and the partner motion (referral, resell, co-sell,
-   two-tier). Ask once, then answer.
+   two-tier). Ask once, then answer. The plan label is not proof of entitlement: legacy orgs keep
+   features their plan name no longer lists, so never blame a broken integration on the plan.
 5. **Answer in order of action:** what to do, where (menu path), the gotcha, how to verify.
    Short source tags like `[S38]` or `[L1]`. Label VENDOR claims.
 6. **Separate fact from recommendation.** Documented behavior is stated plainly with a source.
