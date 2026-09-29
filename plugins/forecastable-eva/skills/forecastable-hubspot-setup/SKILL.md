@@ -96,6 +96,17 @@ name the partner. Whether the integration creates the Lead-side field or it is b
 question for the integration owner. Building it alone risks a duplicate the integration ignores or
 fights with.
 
+### A partner referral into an open deal is influence, not a new lead
+
+Before a partner referral becomes a lead, check the company for an open deal. If one exists, do not
+create a lead or a second deal. Route it to the existing deal owner as influence, and draft a note
+telling the partner the account is already in play. Never overwrite the deal's `lead_source` or
+`partner_source` to credit the new partner: sourced means the opportunity did not exist before the
+partner brought it. Where the influence gets recorded is a question for the integration owner if
+the integration has no place for it yet. A referral into an existing customer is influence to log,
+never a reject. A closed-lost deal the partner reopens is a call for the integration owner, not one
+to make alone.
+
 ### Why a dropdown and not an association label
 
 General HubSpot doctrine says a string cannot roll up, so partner attribution should be an
@@ -167,6 +178,12 @@ nothing, or tracks the wrong company.
    properties, sync filters or Required flags. Produce the ask instead.
 8. **Report the audit, not reassurance.** After any change: what changed, what was checked, with
    counts.
+9. **Baseline attribution before anyone quotes a sourced number.** Count three things and report
+   the counts: deals with Lead Source = Partner Referral and an empty Referring Partner; deals with
+   Referring Partner set and a Lead Source other than Partner Referral; duplicate partner companies
+   (name-alikes with Company type = Partner). Non-zero counts go in the audit before any
+   partner-sourced figure is quoted. An empty report is not proof there is no partner pipeline;
+   check the fields are populated first.
 
 ---
 
@@ -181,3 +198,5 @@ nothing, or tracks the wrong company.
 - [ ] Domains on new records are verified or marked inferred, and bare of `www.` unless the integration owner says otherwise
 - [ ] Nothing integration-namespaced was deleted or made required
 - [ ] The integration owner has said go before any record is written
+- [ ] Partner referrals are checked against open deals before a lead is created
+- [ ] Attribution baseline counted (referral with no partner, partner with no referral, duplicate partner companies) before any sourced number is quoted
