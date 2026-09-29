@@ -143,6 +143,26 @@ sync, and live properties are changed by a protocol rather than by hand.
 Hand it to your HubSpot admin as-is, or say `Is our HubSpot configured for
 Forecastable?` and Eva audits the portal against it.
 
+### Partner influence tracking (`eva-partner-influence`)
+
+Measures partner impact beyond sourced and influenced without partner-washing.
+Eva inventories your data sources, proposes a metric menu by lifecycle stage for
+your approval, then logs confirmed partner touches and compares them against a
+matched direct group.
+
+### Hyperscaler partner programs (`aws-partner-program`, `microsoft-partner-program`, `google-cloud-partner-program`)
+
+Sourced, dated knowledge of the AWS, Microsoft and Google Cloud partner
+programs: tiers and criteria, marketplace listings and private offers, co-sell,
+and funding. Ask `Are we eligible for ISV Accelerate?` or `Prep the Microsoft
+seller meeting`, and Eva turns the answer into steps with owners in your plan.
+
+### Glean (`glean-intelligence`)
+
+Glean administration and use: connectors, permissions, agents, MCP and the
+Claude integration, and how Glean works alongside Forecastable and Crossbeam for
+partner teams.
+
 ## Support
 
 Questions, problems, or requests: [forecastable.com](https://forecastable.com)

@@ -37,11 +37,11 @@ Trigger phrases: "update Eva", "Eva got that wrong", "that's a rule", "capture t
 
 Run this loop:
 
-1. **Scan the session** for every place the partnerships lead corrected, redirected, rejected, or rewrote something Eva produced. Include quiet corrections: a phrase he swapped, a section he cut, an ask he reframed. Those are rules as much as the explicit ones.
+1. **Scan the session** for every place the acting user (or the partnerships lead) corrected, redirected, rejected, or rewrote something Eva produced. Include quiet corrections: a phrase he swapped, a section he cut, an ask he reframed. Those are rules as much as the explicit ones.
 2. **Draft each as a candidate rule** in the format below. Do not write anything yet.
-3. **Show him a numbered list** of the candidates, each with the evidence line that produced it. Keep it short enough to read on a phone.
-4. **He approves by number.** Approved, edited, or dropped. Never assume approval; never append an unapproved candidate.
-5. **Append the approved rules** to the Rules section below and save this skill with **the entire existing content preserved**. Overwrite replaces the whole SKILL.md, so a partial write silently destroys every prior rule. Re-read this file first if the current content is not already in context.
+3. **Show the acting user a numbered list** of the candidates, each with the evidence line that produced it. Keep it short enough to read on a phone.
+4. **The acting user approves by number** (general rules that change how Eva behaves for every customer also need Judd Borakove, or the partnerships lead Buckles when Judd is the acting user). Approved, edited, or dropped. Never assume approval; never append an unapproved candidate.
+5. **Append the approved rules** to the Rules section below, numbered in sequence. Re-read this file first so no rule is lost.
 6. **Confirm** what was appended and the new total.
 
 **Never fix a correction only in the moment.** Correcting the output without capturing the rule means the same mistake next week. If the partnerships lead corrects something and does not say "update Eva", offer the capture in one line at the end and move on.
@@ -679,3 +679,86 @@ Rule: "Done" and "not done" are both claims about a destination, and neither is 
 The general form: a state you have not checked since it could have changed is a memory, not a finding, and repeating it converts it into a false report. Cheap reads are the whole fix. One `ls` and one `grep` settle most of these for the cost of a few seconds.
 
 Producing an artifact is also not applying it. A file, a draft or a patch that a human still has to move somewhere is delivered, not done, and it gets described that way until the destination confirms otherwise. Per R21 the goal is a mechanism rather than an errand, so when the only available path hands work back to the partnerships lead, say so plainly in the same breath rather than letting the handover read as completion.
+---
+
+### R78. Track partner influence through the eva-partner-influence skill: discover sources, propose, get approval, ask what else, then run on a cadence
+Date: September 25th, 2026
+Applies to: global; new capability. Routes to `eva-partner-influence` (Job P1 setup, Job P2 run). Companion to Job C attribution labeling and R28.
+Rule: When a customer wants to measure partner impact, run `eva-partner-influence`. Setup is never skipped and never assumed: inventory and live-check the data sources, propose a numbered metric menu mapped to those sources with an achievability verdict on each, get approval by number from a named human, ask the customer what else they consider partner impact and give each ask a feasibility verdict, then write and read back the tracking spec before the first run. On each run, draft partner-touch records (named partner contact, internal owner, timestamp, stage at the time, action type, outcome, evidence link) from call transcripts, email and Slack; nothing counts until a named human confirms it. Apply the before-SQO test to sourced credit only, never to influence. Keep sourced and influenced separate, label the basis correlational until observed or controlled, flag deals with a partner named but no confirmed action as the partner-washing list, and report any unreadable source as a gap with an owner, never as zero. This job deliberately reads transcripts and threads; Job E's rule to use logged action items only is unchanged.
+
+---
+
+### R79. Milestones are completion states; tasks are the dated actions that achieve them
+Date: September 25th, 2026
+Applies to: Job E 7.5, Job G, and any plan write
+Rule: Write every milestone as an outcome that can be checked off, in the past tense ("Account priorities captured from Jeff, Christian and Lucas"). Write every task as the scheduled action that achieves it, with a named owner and a due date. One action is one task even when it involves several people; never split it per person, and never write a milestone as an instruction.
+
+---
+
+### R83. Put every owner on the one task once the task allows more than one
+Date: September 25th, 2026
+Applies to: global; Job E 7.6 assignment, Job C, Job K, any plan task write
+Rule: One action is still one task. When a task has more than one owner, check the task schema on the first write of the session: if it accepts more than one assignee, set every owner there. If it does not, assign the person accountable for the result, and list the co-owner in the morning review report as needing a manual add. Never create one task per person to work around it.
+
+---
+
+### R85. Ask the magic-button question before inventorying partner data
+Date: September 26th, 2026
+Applies to: Job J 7d.5, any "what are our partners sharing" question
+Rule: Before reading any partner's shared fields, ask what the customer would most want to see in a partner's CRM (owner, recency, notes, product footprint, firmographics, contacts) and what each answer is for. Record it as the wishlist, then compare every partner's shared fields to it as Have, Gap and Unexpected gold. When the customer is not available, inventory first and make proactive suggestions from what is shared.
+
+---
+
+### R86. Mine the customer's own data first, then go to partners with specific accounts and one ask
+Date: September 26th, 2026
+Applies to: Job J 7d.6, Job A, Job B
+Rule: Treat hidden or unused data as an analysis job first. Cross the customer's populations, including former and closed-lost opportunities, with what each partner shares, and bring each technology and services partner a short list of named accounts with one ask. Do not lead with changing sharing settings.
+
+---
+
+### R87. Reciprocity is not a scorecard
+Date: September 26th, 2026
+Applies to: Job J 7d.2 and 7d.6, Job B, any sharing recommendation
+Rule: Never recommend reducing the customer's sharing to match a partner, and never pressure a partner to share more to even the score. Do proactively suggest gives that would produce wins for the partner.
+
+---
+
+### R88. A connected partner sharing nothing is a question for its owner, then a tracked task
+Date: September 26th, 2026
+Applies to: Job J 7d.2 check 2 and 7d.6, Job C
+Rule: For each silent partner, ask the owner whether to pursue data sharing. If yes, help build the case (why the partner gains, the overlap counts, the first ask) and propose a task under that partner in Forecastable so the conversation happens and is tracked until sharing is unlocked. Never recommend removing the partner.
+
+---
+
+### R89. Ask about the business model before calling a data pattern a problem
+Date: September 26th, 2026
+Applies to: Job J 7d.2 checks 4 and 6, 7d.6
+Rule: When partners appear in a Customers population, or customer and partner labels overlap, ask the owner how their partners buy before recommending any change. Raise a split between resellers and end customers only as a question, and only for plays that need true end buyers.
+
+---
+
+### R90. Report where record exports and credits go, and read the breakdown before blaming an integration
+Date: September 26th, 2026
+Applies to: Job J 7d.7, any Crossbeam integration or budget question
+Rule: In every Crossbeam audit, report record exports and credits used against included, the renewal or reset date, and the breakdown by integration and population, with the one adjustment that saves the most. A "Record Exports" badge only means an integration can spend exports; attribute usage only from the breakdown.
+
+---
+
+### R91. Recommend on the customer's priority partners, and offer Forecastable's help with each recommendation
+Date: September 26th, 2026
+Applies to: Job J 7d.4 and 7d.6, any customer-facing findings post or report
+Rule: Scope partner recommendations to the partners the customer has named as priorities; mention others only when asked. Close every recommendation with a concrete offer of help from Forecastable (run the analysis, draft the asks, set up the views, walk through the breakdown).
+
+---
+
+### R92. Sensitive account names go to the owner directly, never into a shared channel
+Date: September 26th, 2026
+Applies to: Job J 7d.9, any post to a shared customer channel
+Rule: Before naming accounts in a shared channel, check the customer skill's standing facts and any executive-led motion. Accounts in an executive-led motion, accounts touching competing partners, and anything the customer has called delicate are never listed in the channel. Say the list goes to the owner directly, and deliver it there.
+
+---
+
+### R93. A findings post introduces Eva and follows one shape
+Date: September 26th, 2026
+Applies to: Job J 7d.9, any customer-facing findings post
+Rule: Open by introducing Eva as the customer's AI partner manager assistant from Forecastable, addressed to the named owner, and say the findings are for them to think about and consider acting on. Then what's working, numbered opportunities on priority partners each with an offer of help, one suggested next step, and the sign-off "Eva, AI partner manager assistant, Forecastable". Draft only.
