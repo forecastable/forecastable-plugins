@@ -11,6 +11,7 @@ Version: 2026-09-29. Sources: `introw-intelligence.md` tags, plus Forecastable's
 | Deal amount, stage, close date | The CRM | Introw is CRM-native; it mirrors the CRM, it does not hold its own pipeline [S38] |
 | Which partner is attached to a deal, and in which role | The CRM, written by Introw | Attribution lives in CRM properties, association labels, junction roles or custom objects [S34][S36] |
 | Partner portal, registrations, enablement, payouts | Introw | Workflow and partner experience layer |
+| Partner plans: onboarding, activation, enablement sequences, goals, milestones, tasks | Forecastable | Plans live in Forecastable. Do not recommend Introw Journeys or Introw goals for this when the customer runs Forecastable; Introw tasks only for partner-facing to-dos inside the portal |
 | Whether the partner actually changed the outcome, and the forecast | Forecastable | Introw records named attributions; it has no built-in sourced vs influenced model or forecast [S94] |
 
 OURS: Introw's named attributions ("Sourced by", "Influenced by", "Reseller") are the right raw
@@ -24,7 +25,7 @@ Pass, fail or unknown per item with the evidence. Route in brackets is the page 
 
 **A. Plumbing (P1: everything downstream depends on these)**
 1. CRM tile is Connected, not Interrupted, Needs attention or Update available [`/settings/integrations`]. No email alert fires when it breaks [S40].
-2. The CRM on the tile is one the plan includes (Pro is HubSpot only) [S2].
+2. If the CRM tile is not Connected, reconnect first. Do not infer a plan limit from the public pricing page; older orgs keep integrations their current plan label does not list [L1].
 3. Salesforce: connection authenticates as a dedicated integration user, not an admin [S37][S23].
 4. Deal attribution is configured in Object Linking; sourced and influenced are separate named attributions [S34][S36].
 5. Opportunities overview count roughly matches partner-attached deals in the CRM [`/overview/DEAL`].
@@ -86,7 +87,8 @@ Forecastable's help executing them, focused on the customer's stated priority pa
 6. **Tier with goals, not labels.** Link tier requirements to goals so progress is live [S57].
    Promotions stay human-reviewed.
 7. **Clean CPQ visibility.** Restrict discounts and test SKUs by segment or deal filter.
-8. **Use workflows for the chase, Eva for the judgment.** Introw workflows handle deterministic
+8. **Spiffs to individual reps are not an Introw job.** Introw commissions and Introw Pay pay the partner company (its champion sets up bank or PayPal; one PayPal account per partner). There are no gift cards and no per-rep payouts. Log the intro in Introw so the credit is tracked, and pay the rep through a gift-card or rewards tool.
+9. **Use workflows for the chase, Eva for the judgment.** Introw workflows handle deterministic
    nudges (task due, journey step) [S84]; Eva handles the cross-system follow-ups Introw cannot see.
 
 ## 5. What Eva does with Introw each week (OURS)

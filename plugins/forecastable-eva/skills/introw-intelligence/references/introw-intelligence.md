@@ -431,11 +431,12 @@ Roadmap directions (no dates) [S31]: autonomous partner onboarding; end-to-end p
 19. No outbound webhooks yet; the in-app Webhooks tab says "Coming soon" [L1].
 20. Partner Connect: deal linking only for partners on HubSpot; Salesforce partners register instead; partner-to-vendor updates are action-driven, no background polling [S82].
 21. WhatsApp: inbound-first, Introw-owned number, exact phone match required [S80].
-22. Introw Pay: company currency must be EUR or USD; bank KYC up to 7 days; PayPal covers countries without bank transfer (Brazil, China, India) [S63].
-23. Consent-aware email tracking automatically disables tracking for FR and IT recipients using CRM country; accurate country data needed [S24].
-24. Email delivery: allowlist `ecosystem@mail.introw.io` and `mail.introw.io`, or set up a custom email domain with DKIM + return-path CNAME [S86][S78].
-25. Help center and docs can disagree (e.g., CRM User scope, free-plan goals); prefer docs.introw.io and release notes [S100][S41][S2][S20].
-26. Hyperscaler partner type: docs claim Introw "syncs ACE opportunities and marketplace deals into your CRM" [S98], but no AWS/Azure/GCP integration page exists in the integration index [S10][S18]. UNVERIFIED.
+22. Payouts go to the partner company, not to individual partner reps: payout setup is done by the partner champion, one PayPal account can be connected to only one partner, and there is no gift-card option [docs features-commissions, 2026-09-29]. Rep-level spiffs need a separate rewards tool.
+23. Introw Pay: company currency must be EUR or USD; bank KYC up to 7 days; PayPal covers countries without bank transfer (Brazil, China, India) [S63].
+24. Consent-aware email tracking automatically disables tracking for FR and IT recipients using CRM country; accurate country data needed [S24].
+25. Email delivery: allowlist `ecosystem@mail.introw.io` and `mail.introw.io`, or set up a custom email domain with DKIM + return-path CNAME [S86][S78].
+26. Help center and docs can disagree (e.g., CRM User scope, free-plan goals); prefer docs.introw.io and release notes [S100][S41][S2][S20].
+27. Hyperscaler partner type: docs claim Introw "syncs ACE opportunities and marketplace deals into your CRM" [S98], but no AWS/Azure/GCP integration page exists in the integration index [S10][S18]. UNVERIFIED.
 
 ---
 
@@ -653,6 +654,7 @@ Partner detail (`/partners/{id}`): tabs Overview, Analytics, People, Opportuniti
 ### 12.3 Corrections to the public-doc picture
 - Webhooks: the Developers area has a Webhooks tab marked "Coming soon". Outbound webhooks are planned, not live, as of 2026-09-29. This resolves the UNVERIFIED item in 4.14 and 8.19.
 - Developers also has a Logs tab (API request logs) and an API Credits meter.
+- Plan labels do not tell you what an org is entitled to. A Pro-plan org was confirmed by Introw (2026-09-29) to have Salesforce access even though the public pricing page lists Pro as HubSpot only; its Salesforce tile showed Interrupted because the connection dropped, not because of the plan. Never diagnose an Interrupted or broken integration as a plan issue from the pricing page. Treat Interrupted as a dropped connection: reconnect first (three-dots menu, same integration user, accept all scopes), and ask Introw about entitlement only if reconnect is refused.
 - Crossbeam on Pro: a Pro-plan org can hold a live Crossbeam connection (likely grandfathered from before the current price book, connection dated Dec 2024). Do not assume Pro means no Crossbeam; check the tile.
 - The Crossbeam integration page shows: who connected it and when, the customer's Crossbeam plan (e.g. Enterprise), Record Export Usage as used / allowance with a percentage bar, days until reset, and the Crossbeam contract term; plus Disconnect and View in Crossbeam. This is the fastest place to see how much of a customer's Crossbeam record-export allowance is gone.
 - Salesforce "Configure" on an Interrupted connection does not open a settings page; the fix is reconnect (three-dots menu) per the troubleshooting doc [S40].
