@@ -166,6 +166,17 @@ before concluding anything is missing.
 `params` is a required property on most list tools even when you have nothing to filter on. Send
 `params: {}` rather than omitting it.
 
+**`Connection closed` is the connector, not the query.** When a call returns the literal string
+`Connection closed`, with no JSON body and no status, the MCP session layer is down. Confirm with
+one call to `getMeta`, the public endpoint that needs no organization: if that also returns
+`Connection closed`, stop probing. Re-sending with an explicit organization will not help, because
+there is no session to scope. Say plainly that the platform could not be reached, log the blocked
+check with the exact error string, and carry on with the checks that rest on files. Never stand in
+a remembered org list or record for a live read, and never report a check as live-verified when
+only files were compared. Seen twice (September 1st and 3rd, 2026) and gone by the next session
+each time, so treat it as transient: the fix to suggest is reconnecting the connector and starting
+a new chat, not a workaround.
+
 **Pagination is inconsistent across the surface and this will bite you.**
 - On list endpoints (`listAccounts`, `listPlans`, `listOpportunities`, `listOrganizations`,
   `listEngageDrafts`), **`limit` is silently ignored**. Verified: sending `limit: 20` returned a

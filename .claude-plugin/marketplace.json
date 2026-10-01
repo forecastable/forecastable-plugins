@@ -10,7 +10,7 @@
       "name": "forecastable-eva",
       "displayName": "Eva, AI Partner Manager Assistant",
       "source": "./plugins/forecastable-eva",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "description": "Eva, your AI Partner Manager. Turns partner decisions into work that actually happens: meeting prep, play assignment and forwardable handoffs, partner success plans, commitment tracking and chases, staleness sweeps, and a daily triage of action items into plans. Drafts everything for your approval and never sends on your behalf.",
       "author": {
         "name": "Forecastable",
