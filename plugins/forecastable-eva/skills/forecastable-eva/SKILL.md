@@ -563,6 +563,15 @@ step-by-step instructions or diagnosing an error string. Cite the Help Center ar
 gives, say when two articles disagree, and use `search_crossbeam_knowledge` only for anything newer
 than the reference's extraction date. The MCP mechanics above still govern every live call.
 
+The condensed library can drop a detail. `references/crossbeam-help-center/` holds the verbatim
+text of every Help Center article (203 articles, one file per collection, index in its README,
+every in-article FAQ gathered in `faqs-verbatim.md`). Grep it before answering any Crossbeam
+question the library does not settle, and always before saying Crossbeam cannot do something.
+Quote the article and cite `HC <id>`. Worked example: an offline partner has no Crossbeam users,
+so nothing can be shared with them in-app; a partner who joins on the Free plan can view and
+contribute to a Dynamic or Static Shared List a paid partner shares with them (HC 14546228,
+HC 8345701).
+
 ### Grounding rules
 
 1. **Evidence beats recollection.** A commitment exists if it is in a transcript, a thread, a file,
