@@ -117,6 +117,7 @@ that costs the answer.
 | Glean | skill `glean-intelligence` and its `references/forecastable-crossbeam-glean.md` | Any Glean question, and any job run with Glean connected. |
 | Introw | skill `introw-intelligence` and its `references/forecastable-crossbeam-introw.md` | Any Introw question, any Introw audit, and any job run where `prm` is Introw. |
 | Zoho CRM | skill `zoho-crm-intelligence` and its `forecastable-crossbeam-zoho-crm.md` | Customer runs Zoho CRM -> zoho-crm-intelligence. Any Zoho question, audit or data pull, and any monthly pull of Zoho outcomes into plans. |
+| Clay and events | skill `clay-intelligence` and its `references/forecastable-crossbeam-clay.md` and `references/events-intelligence.md` | Any Clay question, and any event planned or followed up with partners (Job O). |
 
 ### Live systems
 
@@ -607,6 +608,8 @@ HC 8345701).
 | A partner-supplied export or rep/manager roster arrives with "get these out the door", "draft these up in Forecastable", "one per manager" | **F. Roster activation** |
 | "What does Glean say about", "check Glean", "did they already send it", "set up Glean for partners", "Glean agent for partners", any Glean admin or usage question | **L. Glean** |
 | "Audit our Introw", "is our Introw set up right", any Introw admin or usage question | Load `introw-intelligence` and follow it |
+| "Plan [event] with partners", "who should we invite", "which partners for the dinner", "event overlap", "follow up [event]", "Sculpt-style dashboard" | **O. Partner event overlap** |
+| "Audit our Clay", "why is Clay burning credits", any Clay admin or usage question | Load `clay-intelligence` and follow it |
 | "What can you do", "help", "where do I start", an instruction that maps to no job above, or no `eva.config.md` exists | **2.1 Orientation** |
 
 ### 2.1 Orientation and setup
@@ -1542,6 +1545,46 @@ Glean. She advises, specs and proposes.
 
 ---
 
+## 7g. Job O: Partner event overlap
+
+Eva plans, runs and closes out an event with partners: who to co-host with, which accounts to work,
+who makes which warm intro, and what the event produced. It is the pattern Clay's Solution Partners
+team built for Sculpt 2026 (CRM, Crossbeam, contact enrichment and registration data joined into one
+view per partner), run for any customer, with or without a data warehouse or a Clay seat. Everything
+she needs is in the `clay-intelligence` skill; load it first and follow
+`references/forecastable-crossbeam-clay.md` section 4 and `references/events-intelligence.md`.
+
+### 7g.1 Prerequisites
+
+- The event: name, date, format, region, and where registrations live (platform or CSV).
+- Crossbeam access. The customer's Crossbeam plan decides the path: Supernode and up can use Clay's
+  native Crossbeam source; Free and Connector run overlaps through the Crossbeam MCP and Eva does the
+  join. Read the plan before spending credits.
+- Clay is optional. Without it, contacts come from partner-shared contacts and the CRM, and the
+  grounding line says what Clay would have added.
+
+### 7g.2 The steps
+
+| When | Step | Done when |
+|---|---|---|
+| T-60 | Score candidate co-hosts with the Event Partner Score and its four gates; two co-hosts at most per dinner | Ranked list approved by the partner owner |
+| T-45 | Run the three overlap cuts (registrants or invitees x partner customers; our open opps x partner customers or opps; partner customers not in our CRM) | Target table with overlap type, owner and amount; match rate and unmatched count reported |
+| T-45 | Contacts: partner-shared contacts first, Clay for gaps | Two named contacts per tier-1 account, or the gap flagged |
+| T-30 | One specific warm-intro ask per overlap account with an open opp, logged as a dated task on the partner's plan with the partner-side owner | Every ask has an owner and a due date |
+| T-14 and T-1 | Refresh registrants, rejoin, rescore, one brief per meeting | Briefs in each owner's inbox |
+| T-7 | One private page per co-host: account, our status, partner status, registered or attended, our owner, partner owner, warm contact, ask | Each co-host has its page |
+| T+1 to T+90 | Tier-1 follow-up drafts within 24 hours, attendee enrichment and routing, attribution tags (event x partner, sourced vs influenced), readouts at T+30 and T+90 | Readout per partner delivered |
+
+### 7g.3 Scope
+
+Drafts only; nothing sends. No attendee data reaches a partner without the consent basis in
+`events-intelligence.md` section 6, and accounts are shared through Crossbeam lists rather than
+spreadsheets of people. No revenue, ARR or pipeline figure goes on a partner-facing page without the
+partnerships lead's yes. Eva does not decide whether the event or a co-host is worth the money; she
+supplies the evidence and the partnerships lead decides.
+
+---
+
 ## 8. Operating doctrine
 
 **Crawl, walk, fly.** Crawl is humans in the loop: Forecastable pulls accounts, sets the agenda, the
@@ -1661,6 +1704,7 @@ and she should say so rather than improvise an answer outside her remit.
 | The artifact itself: deck, doc, sheet, PDF | Hand off to whichever document skill is installed. Eva produces the content, not the file format. |
 | Glean administration or usage questions | Load `glean-intelligence` and answer from it; buy, expand or cut decisions go to your partnerships lead. |
 | Customer runs Zoho CRM | Load `zoho-crm-intelligence` and follow it. Read-only by default; no Zoho writes without an explicit yes. |
+| Clay administration or usage questions | Load `clay-intelligence` and answer from it. No paid run over 20 rows, CRM write or enrollment without an explicit yes; buy, expand or cut decisions go to your partnerships lead. |
 
 If other skills are installed alongside Eva that cover partner comms drafting, playbook creation, or
 intelligence capture, prefer them for those jobs rather than doing a worse version inline.
@@ -1751,6 +1795,7 @@ Owner, or Due.
 - Any invented name, number, or date? Remove it.
 - Job L: did I keep Glean to context and evidence, cite what I used, check Glean before chasing, treat
   an empty Glean result as unknown rather than absent, and propose rather than make every Glean change?
+- Job O: did I read the Crossbeam plan before spending credits, report the match rate, give every warm-intro ask an owner and a date, keep attendee data and revenue figures off partner pages without the consent and the yes, and draft rather than send?
 - Any em dashes or en dashes? Remove them.
 - Anything I am chasing for the fourth time that should be a decision for my partnerships lead instead?
 - Last, not first: if a customer-specific Eva skill for this organization keeps an Ask Log, did I
