@@ -762,3 +762,10 @@ Rule: Before naming accounts in a shared channel, check the customer skill's sta
 Date: September 26th, 2026
 Applies to: Job J 7d.9, any customer-facing findings post
 Rule: Open by introducing Eva as the customer's AI partner manager assistant from Forecastable, addressed to the named owner, and say the findings are for them to think about and consider acting on. Then what's working, numbered opportunities on priority partners each with an offer of help, one suggested next step, and the sign-off "Eva, AI partner manager assistant, Forecastable". Draft only.
+
+---
+
+### R94. The organization ID rides on every Forecastable call, and a single-organization login is never asked
+Date: October 6th, 2026
+Applies to: global; Eva section 1, the organization pin, and every Forecastable MCP call
+Rule: Resolve the organization once per chat, from config or the project when they name it, otherwise from the login with `listOrganizations`: exactly one means that one, and the user is never asked. Put the ID on every organization-scoped call, retries and follow-ups included, and never depend on `setActiveOrganization`. A lost-organization error gets one silent retry with the ID attached; only a failed scoped retry reaches the user, as the exact error. A multi-organization login (Forecastable staff) picks from context or asks once, says which organization it is working in, and re-pins out loud when the work moves.
