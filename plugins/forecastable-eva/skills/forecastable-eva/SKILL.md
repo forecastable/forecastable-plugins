@@ -56,6 +56,38 @@ which costs more than the commitment you were chasing.
 
 ## 1. Ground yourself before you act
 
+### The organization pin: every Forecastable call, every time
+
+Eva never loses track of which organization she is working in, because she never keeps it in the
+one place that can lose it. MCP session state (`setActiveOrganization`) can lapse between any two
+calls, in any client, without warning. The organization ID travels on each call instead.
+
+1. **Know it from the login, once per chat.** Before the first organization-scoped call, read
+   `organization_id` from `eva.config.md`, or from the project instructions or a project file when
+   they name it. Otherwise call `listOrganizations`: the connector is signed in as this person, so
+   it returns only the organizations their login belongs to. Exactly one means that is the
+   organization. Pin it and carry on. Never ask someone with one organization which one they are in.
+2. **More than one means a multi-organization login,** usually Forecastable staff working across
+   customers. Pick from context when it is unambiguous (the customer named in the request, or a
+   customer-specific Eva skill that is loaded) and say which organization you are working in.
+   Otherwise ask once, in one line, and pin the answer for the rest of the chat. When the work
+   moves to another organization, say so in one line and re-pin before the next call, rather than
+   letting it drift.
+3. **Carry the pinned ID on every organization-scoped call.** `params.organizationId` on every
+   tool that takes `params`, `headers.xOrganizationId` as a second copy on every write, and the
+   top-level `organizationId` where a tool asks for one (`listOrganizationUsers`). That covers the
+   fortieth call of a long run, every retry, a one-line follow-up, and a quick read to check
+   something. No call is too small to carry it.
+4. **`setActiveOrganization` is never the scoping mechanism.** The connector's own tool notes
+   suggest it; this rule overrides them. With the ID pinned it is never needed, so do not spend
+   tool calls on it or on `getActiveOrganization`.
+5. **A lost-organization error is a retry, not an event.** If a call returns "No organization is
+   active", any other missing-organization error, or `not_found` on a record you just read, send
+   that same call again once with the pinned ID and carry on. Do not tell the user the session lost
+   anything, do not ask them to fix it, and do not stop the job. Only when the scoped retry also
+   fails, report the exact error string.
+6. **The ID is tenant data.** It lives in config, the project or the chat, never in this skill.
+
 ### Paths and configuration
 
 Eva stores nothing about your organization inside this skill. Everything tenant-specific lives in
@@ -154,15 +186,16 @@ This is the platform Eva writes to, so fluency here is not optional. Everything 
 against the live API on the date shown. Where a note is dated, treat it as what was true then, not
 as a permanent law. If a documented limit appears to have been lifted, re-probe and trust the probe.
 
-**Scoping. Every session starts with no organization.**
-`getActiveOrganization` returns `organizationId: null` on a fresh session. There are two ways to
-scope a call and **`params.organizationId` is the one to use**: it is a verified alias for the
-header, it travels with the call, and it cannot expire mid-run the way session state does. Keep
-`headers.xOrganizationId` as the belt-and-braces second copy on writes. Never rely on
-`setActiveOrganization` alone; when it lapses the API returns `not_found` naming the record rather
-than the session, so eleven good writes once failed reporting "Account not found" on accounts that
-were fine. If a record you just read successfully returns `not_found`, re-send scoped explicitly
-before concluding anything is missing.
+**Scoping. Every session starts with no organization; the organization pin at the top of this
+section is the rule.** `getActiveOrganization` returns `organizationId: null` on a fresh session,
+and session state can lapse between any two calls. `params.organizationId` is a verified alias for
+the header, it travels with the call, and it cannot expire. Keep `headers.xOrganizationId` as the
+second copy on writes. When `setActiveOrganization` lapses the API returns `not_found` naming the
+record rather than the session, so eleven good writes once failed reporting "Account not found" on
+accounts that were fine, and on October 5th, 2026 a partner manager's run lost its organization
+mid-task and ran out of tool calls before the write was retried, so nothing was logged. If a record
+you just read successfully returns `not_found`, re-send scoped explicitly before concluding
+anything is missing.
 
 `params` is a required property on most list tools even when you have nothing to filter on. Send
 `params: {}` rather than omitting it.
@@ -621,8 +654,9 @@ available, then offer it in their language.
 **Check state before you speak.** Silently establish:
 
 1. Does `eva.config.md` exist and parse? If not, this is a first run.
-2. `listOrganizations`, then confirm which organization this person belongs to. If exactly one, use
-   it. If several, ask once and write the answer to config.
+2. The organization, resolved as the pin in section 1 says: `listOrganizations` reads it from the
+   login. Exactly one means use it without asking. Several means pick from context or ask once, and
+   write the answer to config.
 3. `listAccounts` with `pageSize: 1` for a count of partner accounts.
 4. Calendar reachability, read from `teamUserIds` on a `listCalendarEvents` response rather than
    from the event count. A quiet week returns zero events on a perfectly healthy calendar, so an
@@ -1687,6 +1721,10 @@ files. Do not write those files yourself; that belongs to the intelligence skill
 21. **Never take a number from a Glean document.** Counts, amounts, stages and dates come from
     Crossbeam, the CRM or Forecastable.
 22. **Never change a customer's Glean configuration.** Propose, name the customer-side owner, and wait.
+23. **Never depend on session state for the organization.** Every Forecastable call carries the
+    pinned organization ID (section 1). A single-organization login is never asked which
+    organization it is in, and a lost-organization error gets one scoped retry, never a message
+    asking the user to fix it.
 
 ---
 
@@ -1771,8 +1809,9 @@ Owner, or Due.
 - Job B: does each draft carry exactly one ask, counted as asks and not question marks?
 - Job B: does any draft assume the partner rep can see the account on their side?
 - Job J: did the greenfield check hedge an empty result and name the likely cause?
-- Forecastable: did I scope every call explicitly, and did I use `pageSize` on lists and `limit` on
-  calendar?
+- Forecastable: did every call carry the pinned organization ID, retries and follow-ups included,
+  did I take a single-organization login's organization without asking, and did I use `pageSize`
+  on lists and `limit` on calendar?
 - Did any personal calendar event reach the output? Remove it.
 - Is the attribution stage labeled honestly?
 - Job A: are the accounts ordered by warmth, with closed-lost and dormant in the list, and is
