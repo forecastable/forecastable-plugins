@@ -33,6 +33,16 @@ Before producing any Eva output, read the rules in this file and apply them.
 
 ## Write path: "update Eva"
 
+When the Forecastable MCP exposes the database-backed EVA tools, use the
+[company workspace protocol](../eva-company-workspace/SKILL.md) for new company corrections.
+Keep the candidate-and-human-review steps below, but save an approved correction into an
+existing company skill with `updateEvaSkill`, or propose an existing knowledge revision with
+`updateEvaKnowledge`. Do not append customer-specific facts or instructions to this distributed
+plugin file. Preserve the historical rules below as reference. Proposed global improvements need
+a separate platform-admin review and shared release; they are never inferred from one customer.
+If the database-backed tools are unavailable, present the correction and report that it has not
+been saved. Do not claim that editing a plugin cache creates durable company memory.
+
 Trigger phrases: "update Eva", "Eva got that wrong", "that's a rule", "capture that", or any correction the partnerships lead makes to an Eva output.
 
 Run this loop:
