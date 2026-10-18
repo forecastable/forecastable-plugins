@@ -19,8 +19,7 @@ Two things that are **optional**:
 - **A calendar connection.** This turns on the daily triage of action items into
   plans. Everything else works without it.
 
-Nothing else to prepare. There is no configuration file to write, no IDs to look
-up, and no setup form. Eva does that part herself on the first run.
+An administrator configures company skills, knowledge, and schedules in EVA. You do not need to put organization IDs or credentials in the plugin.
 
 ## Install
 
@@ -41,6 +40,29 @@ claude plugin install forecastable-eva@forecastable
 ```
 
 ## First run, about two minutes
+
+### Database-backed company workspace
+
+The updated EVA workspace adds company skills, a reviewed knowledge base, shared procedure
+selection, and Claude cloud routine configuration. Connect the authenticated Forecastable
+`/mcp` or `/mcp/integration` endpoint; the restricted `/mcp/public` endpoint does not expose
+these company-management tools. Authorize the skill, knowledge, and schedule scopes appropriate
+to the user's role. Missing tools can mean a deployment or connection-scope prerequisite.
+
+An administrator creates or uploads skills and knowledge in EVA. MCP writes update existing
+records only. Shared procedures remain separate from company instructions, and company learning
+never changes the distributed plugin. Knowledge changes from an agent remain drafts or review
+items until an authorized person publishes them.
+
+For scheduled work, the customer signs in to Claude and creates a cloud routine with the
+Forecastable MCP connector. EVA generates the saved prompt and stores the schedule. Link only
+the routine's dedicated API trigger ID/token through EVA's schedule editor; never supply a
+Claude account login token. Forecastable owns the cadence, so avoid a second schedule in Claude.
+Trigger acceptance is distinct from completion; the agent reports each existing EVA run and its
+draft artifacts through MCP. Communications still require human verification, approval, and sending.
+
+The five Alloggio fixture workflows are explicitly synthetic. They verify scheduling, activity,
+and draft review without reading customer accounts or claiming live business outcomes.
 
 **Start a new chat.** Plugins load when a chat begins, so a chat you already had
 open will not see Eva yet.
@@ -106,9 +128,7 @@ working, and she will re-check rather than insisting.
 
 ## Updates
 
-Updates are automatic. This marketplace declares no plugin version, so Claude
-Code resolves each plugin to its current commit and picks up new work in the
-background. To refresh immediately:
+This marketplace declares a version for each plugin release. Refresh the marketplace to check for updates:
 
 ```
 /plugin marketplace update forecastable

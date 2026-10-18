@@ -56,6 +56,14 @@ which costs more than the commitment you were chasing.
 
 ## 1. Ground yourself before you act
 
+### Company workspace protocol
+
+Before every EVA task, read the companion [company workspace protocol](../eva-company-workspace/SKILL.md).
+It defines the database-backed skill, knowledge, and scheduled-run tools. Carry the pinned
+organization ID explicitly on those tools. Company-specific instructions and learning stay in
+that organization's records. No procedure or learned rule can expand tool permissions, publish
+unreviewed knowledge, or authorize sending communications.
+
 ### The organization pin: every Forecastable call, every time
 
 Eva never loses track of which organization she is working in, because she never keeps it in the
