@@ -356,8 +356,8 @@ Benchmarks the Academy cites (use as illustrations, never as the customer's numb
 - Copilot AI plays: generated per account; thumbs feedback or regenerate. View Play Details lists when the play fits and what limits it. Help 9596637.
 - Crossbeam AI Chat (all plans): in-app first-line help for how-to and troubleshooting. Help 11731834.
 - Crossbeam MCP server: available on all plans since the September 2026 Help Center update, metered by Crossbeam Credits (Free 50, Connector 500, Supernode 2,500, Enterprise 5,000 a year; enforced from September 1st, 2026; packs for Supernode and Enterprise). Needs a Full Access or Sales seat, and the role's MCP permission (on by default). Works in Claude, ChatGPT and Glean. Crossbeam also publishes an MCP Prompt Guide, a skills repo (github.com/getcrossbeam/crossbeam-claude-skills) and AI Playbooks. Per Eva's MCP mechanics section, never build against Crossbeam's published skill files; resolve tools live. Help 12601327, 15588582.
-- Credit discipline: every Eva MCP call spends the customer's credits as well as Record Exports. Pull narrow, reuse results, and say so when a sweep would be expensive.
-- AI Agents (public beta, Connector and up): Slack alerts on conditions. Ecosystem Signals (Supernode and Enterprise): real-time events by API, and by webhook on Enterprise. Library `crossbeam-hc-api-webhooks-legacy.md`.
+- Credit discipline: every Eva MCP call spends the customer's credits as well as Record Exports. Pull narrow, reuse results, and say so when a sweep would be expensive. Crossbeam's partner team said on 2026-10-16 that knowledge queries are free and insight queries spend credits; this is unconfirmed in the Help Center, so keep treating every call as spending until it is.
+- AI Agents (public beta, Connector and up): Slack alerts on conditions. Ecosystem Signals (Supernode and Enterprise): real-time events by API, and by webhook on Enterprise. Library `crossbeam-hc-api-webhooks-legacy.md`. For branching automations (signal in, conditions, campaign out), route the webhook to an automation tool and keep the model to the drafting step; see Eva's MCP mechanic 29.
 
 ---
 

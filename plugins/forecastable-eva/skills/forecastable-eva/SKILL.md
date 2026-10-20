@@ -398,7 +398,7 @@ name and it will be read as fact later.
 `buyingGroupId`. `USER` plans are personal "My Plan" records and are never a routing target for
 Job E. Prefer `getPlan` over separate list calls; it returns milestones, goals and tasks nested.
 
-### Crossbeam MCP mechanics (re-read from the live tool schemas 2026-09-26)
+### Crossbeam MCP mechanics (re-read from the live tool schemas 2026-09-26, updated with Crossbeam's product team 2026-10-20)
 
 Crossbeam is where the overlap, the partner metrics, and the partner-shared contacts come from, so
 Eva reads it constantly. The tool surface, limits and defaults below were re-read from the live
@@ -422,8 +422,8 @@ Call either only if the first-call check shows it present.
 - Accounts out ("which accounts do we share with Box"): `find_overlapping_accounts_and_leads`.
 - Partners out ("which partners know Accenture"): `find_overlapping_partners`.
 - Contacts at one account: `find_partner_shared_contacts`.
-- A partner's customers that are not in your CRM at all, or your CRM accounts that sit in none of
-  your populations: `find_new_accounts` (mechanic 21).
+- A partner's customers that are not in your CRM at all, greenfield, or your CRM accounts that sit
+  in none of your populations: `find_new_accounts` (mechanics 21 and 26).
 - What one partner shares about one of your records, such as owner, tier or renewal date:
   `get_partner_overlaps_shared_context` (mechanic 22).
 - Partner deals opened and won: `get_ecosystem_activity` (mechanic 19).
@@ -461,7 +461,8 @@ addressed to that person.
 `{"name": "decision_maker", "type": "segment"}`. `popular_contact` is a `score` with `data.value`,
 and observed values are small (0.02 to 0.13), so treat it as a weak tiebreaker and never as
 evidence of seniority. `partner_insights` ranks above `insights` when both exist, and in practice
-`partner_insights` is frequently an empty array.
+`partner_insights` is frequently an empty array. The two collections mean different things, and
+mechanic 23 says which one a warm-intro ask may rest on.
 
 **5. `in_own_crm` is the field the incremental-coverage gate runs on.** It is the one that answers
 whether the partner can open a door the customer cannot already open. `crm_id` is null whenever
@@ -599,6 +600,97 @@ partner's overlapping records with the CRM fields they share: owner, industry, e
 custom mapped fields such as account tier or renewal date. The result is capped: `truncated: true`
 means the partner holds more than you were shown. Pull it for the few accounts a job will act on,
 never for every account scanned.
+
+**23. `partner_insights` is your partners' view of a contact; `insights` is the whole network's.**
+Confirmed with Crossbeam's MCP engineering team on 2026-10-20. In the Crossbeam UI the same split
+shows as a filled pill (identified by your own partners) against an outlined pill (identified
+across the wider Crossbeam network). Rules that follow:
+- A warm-intro ask, a "who does our partner know" answer, or a Job B play rests only on
+  `partner_insights`. An `insights`-only contact is not evidence that any of your partners knows
+  that person, so never present one as a partner relationship.
+- Even `partner_insights` says a partner flagged the person, not how strong the relationship is.
+  Say "flagged by [partner] as economic buyer", never "[partner] is close to them", and get the
+  strength from the partner manager or the partner before the ask goes out.
+- `insights`-only contacts are still useful as targeting: they tell you who the network thinks the
+  buyer is. Label them that way.
+
+**24. Match date is the field that turns an overlap into an order and a reason.** The overlap
+record carries the date the overlap was first matched (`matched_at` in the API; confirm the MCP
+field name on the first call, because it was confirmed verbally on 2026-10-20 and not yet seen in
+a response). It holds the original match only and does not move when the overlap changes later;
+`updated_at` is the field for "changed since". Use it two ways: rank a scenario's accounts by
+newest match when building a curated list ("top 10 by match date"), and give copy a true hook
+("we have overlapped at this account since July"). Never compute a match date from the recency
+buckets in mechanic 14.
+
+**25. Saved lists cannot be read by the MCP or the API today, so build the scope yourself.**
+Eva can create a report (mechanic 13) but cannot pull the records of a list someone already saved
+in the Crossbeam UI. Until a list-reading tool shows up in the live tool surface, reproduce the
+scope with tight populations on both sides and the overlap tool's segment filters, and say in the
+grounding line that the result is rebuilt from filters rather than read from the saved list. When
+a list-reading tool appears, it becomes the default for any job that works one co-sell scenario:
+one stamped saved list per scenario (mechanic 18), with the columns the play needs, sorted by
+match date. Check for it on the first call of every run rather than assuming either way.
+
+**26. Greenfield reports cannot be queried; `find_new_accounts` gets the same answer.** Crossbeam
+calls this capability Pipeline Generation (PipeGen) and the tool Net New Accounts. When someone
+asks for greenfield, whitespace, or "partner customers we don't have", call `find_new_accounts`
+by name rather than letting a broader overlap tool answer. Mechanic 21 governs how to read it.
+
+**27. Crossbeam data in the CRM is a subset of Crossbeam, and it goes stale.** Customers often ask
+Eva to work from the Crossbeam fields already pushed into Salesforce or HubSpot, usually to save
+MCP credits. The push carries only the populations, partners and fields chosen in the integration,
+is not refreshed continuously, and is not always removed when an overlap stops being true.
+Contact-level partner intelligence (mechanic 23) never lands in the CRM at all. On 2026-10-20 one
+customer's saved list showed 33 records in Salesforce against more than 70 in the Crossbeam UI the
+same day. So:
+- A CRM read is fine for a first pass, a count, or a report the customer already trusts.
+- Before anything is sent, assigned or claimed as partner-sourced, confirm the account in
+  Crossbeam itself.
+- Anything about who a partner knows comes from Crossbeam, never the CRM.
+Say this as data completeness and freshness, never as a way to spend more credits.
+
+**28. One Crossbeam organization per connection, and no switching.** A login that can see several
+Crossbeam organizations in the web app still reaches only one through the MCP, and Crossbeam will
+not add switching because changing organizations mid-session lets one customer's context leak into
+another's. Never try to work two customers' Crossbeam in one session, and never carry a Crossbeam
+finding from one customer's run into another's. Each customer's Eva runs under that customer's own
+authenticated identity, which is also how its usage gets capped and reported.
+
+**29. Deterministic triggers belong in a webhook and a workflow tool, not in Eva.** "When a partner
+opens or wins a deal at an overlap, start this campaign" is a rule, and an LLM asked to apply a
+rule on every event will sometimes decide otherwise. Crossbeam's own guidance (HC 12732223) and its
+product team (2026-10-20) agree: send the signal by webhook to an automation tool such as n8n,
+Make or Zapier, apply the conditions there, and call a model only for the reasoning or drafting
+step inside that flow. Eva's part is to design it: the trigger, the conditions, which campaign each
+branch runs, and the approval step. Rules:
+- Check the plan first. Webhooks are Enterprise only and the signals API is Supernode and up
+  (HC 12732223, HC 4677142). Below that, the fallback is a scheduled pull of
+  `get_ecosystem_activity` (mechanic 19) that compares against the last run.
+- Signals today are deal opened and deal closed-won, in both directions, and they come from a
+  connected CRM. A partner that is offline or only uploads CSVs never fires one, so an automation
+  built on signals is silent for them. Say so when the roster includes such partners.
+- Webhook deliveries spend Record Exports (mechanic 12). Every webhook gets partner and population
+  filters before it goes live.
+- Crossbeam's built-in Automations are templated and quick to set up. Recommend them for a simple
+  alert; recommend a webhook when the action branches.
+- Every branch that produces outreach ends in a draft in the approval queue. The never-auto-send
+  rule holds inside automations too.
+
+**30. Crossbeam's MCP and API change often. Treat the live surface as the truth.** Crossbeam has
+said more is coming: reading saved lists through the MCP and later the API, filters on the API
+overlap endpoint by your population, the partner's population and the partner (so a first sync
+pulls only the filtered set and does not spend the customer's Record Export limit), an API section
+in the app's navigation with keys and webhooks, more signal types, and MCP write tools including
+inviting partners. None of it exists for Eva until it appears in the live tool surface or the Help
+Center. Until then, never tell a customer a capability is available, never promise a date, and use
+the workaround in the mechanic that covers it. When a new tool or field shows up, use it, say in
+the grounding line that it is new, and tell the Forecastable team so this section gets updated.
+
+**Credits are still an open question.** Crossbeam's partner team said on 2026-10-16 that knowledge
+queries do not spend MCP credits and insight queries do. That is not yet in the Help Center or
+confirmed by a test. Until it is, treat every call as spending credits, as the administration
+reference says.
 
 ### Crossbeam administration knowledge
 
