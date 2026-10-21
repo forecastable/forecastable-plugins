@@ -52,7 +52,8 @@ When search finds no job or skill for the task, say so in one line and do the ta
 | Report a scheduled run | `updateEvaRun` |
 | Set up Eva in this Claude | `setupEvaSkill`, then `setupEvaKnowledge` and `setupEvaSchedules`. They return instructions to follow; they install nothing |
 | Sourced organization facts and corrections | `searchOrganizationMemory`, `inspectOrganizationMemory`, `createOrganizationMemory`, `correctOrganizationMemory` |
-| Change Eva (administrators) | `createEvaJob` / `updateEvaJob`, `createEvaSkill` / `updateEvaSkill`, `createEvaKnowledge` / `updateEvaKnowledge`, `createEvaSchedule` / `updateEvaSchedule` |
+| Propose knowledge (lands in review) | `createEvaKnowledge` / `updateEvaKnowledge` |
+| Change jobs, skills and schedules (administrators) | `createEvaJob` / `updateEvaJob`, `createEvaSkill` / `updateEvaSkill`, `createEvaSchedule` / `updateEvaSchedule` |
 | Pilot event workflows (need an event correlation ID) | `getEvaEvent`, `listEvaWorkflows`, `resolveEvaWorkflow` |
 
 ## Changing Eva
@@ -60,7 +61,7 @@ When search finds no job or skill for the task, say so in one line and do the ta
 - Show the user the exact change and get a yes before any create or update call.
 - Fetch first, then pass the `expectedVersion` you fetched and a fresh `requestId`. Reuse a `requestId` only to retry the identical call. On a version conflict, fetch again and show the user the difference.
 - Knowledge written through the MCP lands in review; a person publishes it in the Eva UI, and only then can agents read it.
-- Creating jobs, skills, knowledge and schedules is for company administrators and Forecastable consultants. Global skills are published from the Eva UI only. A permission error is an answer: tell the user who can make the change.
+- Most roles can propose knowledge; an administrator or consultant publishes it. Creating jobs, skills and schedules is for company administrators and Forecastable consultants. Global skills are published from the Eva UI only. A permission error is an answer: tell the user who can make the change.
 
 ## Evidence
 
