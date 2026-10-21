@@ -132,6 +132,14 @@ escalates judgment calls to your partnerships lead rather than guessing.
 Eva reads your live Forecastable workspace, and Crossbeam when your organization
 has it connected.
 
+### Use Eva (`use-eva`)
+
+Ships inside the same plugin. Connects Claude to your company's own Eva in
+Forecastable: it searches your company's jobs, skills and knowledge, fetches the
+current version before following any of them, and keeps what it produces as
+drafts for your approval. Say `Run our morning partner alert` or `What are our
+co-sell rules?`.
+
 ### HubSpot setup for Forecastable (`forecastable-hubspot-setup`)
 
 Ships inside the same plugin. The standard for configuring a HubSpot portal
