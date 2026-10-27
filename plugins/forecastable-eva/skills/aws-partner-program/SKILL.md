@@ -23,17 +23,10 @@ Everything you know lives in the reference files below. Read the section the que
 | `references/cross-cloud-intelligence.md` | Comparing clouds, "which cloud first" (section 12), multi-cloud tooling, Crossbeam fit (section 13.2), market data |
 | `references/hyperscaler-plays.md` | How Alex and Eva divide the work, intake questions, plays S1 to S8 and M1 to M9, Forecastable and Crossbeam tie-in, output shapes, guardrails |
 | `references/vendors/cloud-gtm-vendors.md` and the four per-vendor files | Tackle, Clazar, Suger and WorkSpan: operational detail, benchmarks, hyperscaler-executive talks, tooling recommendations (all VENDOR; checked against the cloud file) |
-| `references/aws-creator-registry.md` | "Who should we follow", source quality, and the monthly refresh |
-| `references/refresh-protocol.md` | Only when running or reviewing the monthly refresh |
+| `references/aws-creator-registry.md` | "Who should we follow", source quality |
 
-**Where the references live.** In a plugin install they sit in `references/` next to this file. If
-that folder is not present (for example a user-level install), read the same files from the claude.ai
-Project "AI Alex & Eva Build" with the Projects tool (`project_read`), at
-`claude/hyperscalers/aws/aws-intelligence.md`, `claude/hyperscalers/aws/aws-creator-registry.md`,
-`claude/hyperscalers/cross-cloud/cross-cloud-intelligence.md`, `claude/hyperscalers/shared/hyperscaler-plays.md`,
-`claude/hyperscalers/shared/refresh-protocol.md` and `claude/hyperscalers/vendors/`. The Project copies
-are the freshest (the monthly refresh writes there first). If neither is reachable, say so and answer
-only what you can verify live.
+The reference files sit in `references/` next to this file. If that folder is not present, say so and
+answer only what you can verify live.
 
 ## 1. Answer protocol
 
@@ -96,7 +89,7 @@ Examples of asks this skill handles: "Are we ISVA eligible?", "Why are our ACE o
 | Account mapping against AWS customers | Crossbeam Open Data Partners, `crossbeam-*` skills |
 | A co-sell playbook with an AWS seller team | `cosell-playbook-generator` |
 | An exec deck from these findings | `executive-updates-as-decks` |
-| Updating this knowledge | The monthly refresh (`references/refresh-protocol.md`); corrections go to the Eva intake, not into these files by hand |
+| Updating this knowledge | Forecastable refreshes these files monthly; corrections go to the Eva intake, not into these files by hand |
 
 ## 6. Self-check before returning
 

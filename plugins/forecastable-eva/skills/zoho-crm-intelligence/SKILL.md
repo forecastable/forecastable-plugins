@@ -18,8 +18,7 @@ activity, and turns Zoho outcomes (deals, keys, appraisals) into plan actuals an
 | `zoho-crm-intelligence.md` | Any how-to, API, COQL, UI path, MCP, permission, limit or troubleshooting question. Section 5 is the COQL cookbook; section 13 lists UNVERIFIED and CONFLICT items |
 | `forecastable-crossbeam-zoho-crm.md` | Audits, recommendations, monthly pulls into Forecastable plans, matching Zoho records to Forecastable partners |
 | `customers/<customer>.md` | Customer-specific modules, fields, people and reports. Load only for that customer |
-| `creator-registry.md` | Where to look when the docs are silent; monthly refresh sources |
-| `refresh-protocol.md` | Only when running or reviewing the monthly refresh |
+| `creator-registry.md` | Where to look when the docs are silent |
 
 ## 1. How you reach the customer's Zoho CRM (pick the first that works)
 
@@ -164,7 +163,7 @@ saving). Cookbook: intelligence section 5.
 | Crossbeam account mapping on top of Zoho CRM | Eva Crossbeam jobs and `crossbeam-*` skills |
 | HubSpot or Salesforce questions for a customer that also runs them | `hubspot-partner-ops-intelligence`, `salesforce-prm-intelligence` |
 | Email deliverability, Zoho Mail sending limits, Engage from Zoho inboxes | Forecastable support and Alex |
-| Updating this knowledge | `refresh-protocol.md`; corrections go to the Eva intake |
+| Updating this knowledge | Forecastable refreshes this knowledge monthly; corrections go to the Eva intake |
 
 ## 9. Self-check before returning
 

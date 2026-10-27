@@ -1,6 +1,6 @@
 # Zoho CRM Intelligence
 
-Version: 2026-09-29. Owner: Forecastable (Eva build). Refresh: monthly (see `refresh-protocol.md`).
+Version: 2026-09-29. Owner: Forecastable (Eva build). Refreshed monthly by Forecastable.
 
 Source tags: [A#] Zoho CRM API v8 developer docs and Kaizen posts; [B#] Zoho product, help, MCP and
 pricing pages, Claude connector listing, direct HTTP checks; [Y:video_id mm:ss] YouTube transcript,

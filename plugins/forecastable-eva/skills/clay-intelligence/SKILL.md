@@ -20,7 +20,7 @@ activity into a forecast and defensible sourced vs influenced attribution.
 | `references/events-intelligence.md` | Event format choice, partner selection score, the Sculpt pattern, pre/during/post runbook, attendee privacy, attribution, event-platform APIs, benchmarks |
 | `references/clay-admin-best-practices.md` | Practitioner tips: table architecture, credit efficiency, waterfalls, Claygent prompts, CRM write-back, debugging, common mistakes |
 | `references/youtube-digest.md` | Exact steps and quotes from the 74 source videos, with timestamps |
-| `references/creator-registry.md`, `references/refresh-protocol.md` | Only when running or reviewing the monthly refresh |
+| `references/creator-registry.md` | Who to follow on Clay and partner events |
 
 ## 1. How you reach the customer's Clay (pick the first that fits the job)
 
@@ -106,7 +106,7 @@ Record the path used in the customer's stack profile.
 | Cold outbound copy and Instantly campaigns | `cold-outbound`, `forecastable-outbound-runbook` |
 | Customer also runs Introw, Glean, ZINFI, Zoho | the matching `*-intelligence` skill |
 | A named customer | also that customer's `eva-{customer}` skill |
-| Updating this knowledge | `refresh-protocol.md` |
+| Updating this knowledge | Forecastable refreshes this knowledge monthly; corrections go to the Eva intake |
 
 ## 7. Self-check before returning
 

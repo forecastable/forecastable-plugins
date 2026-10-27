@@ -1,6 +1,6 @@
 # YouTube Digest: Clay and B2B Event Strategy for Eva
 
-Built 2026-10-04 for Eva (Forecastable partner-operations assistant). Source: 44 YouTube transcripts saved in `/home/claude/clay/youtube/transcripts/` (about 192,000 words). Every number below is attributed to the speaker who said it; none are independently verified. Timestamps are mm:ss into the video. Clay plan prices and features change often: treat anything priced as "as stated on that date" and confirm against clay.com before quoting to a customer.
+Built 2026-10-04 for Eva (Forecastable partner-operations assistant). Source: 44 YouTube transcripts saved during the build (about 192,000 words). Every number below is attributed to the speaker who said it; none are independently verified. Timestamps are mm:ss into the video. Clay plan prices and features change often: treat anything priced as "as stated on that date" and confirm against clay.com before quoting to a customer.
 
 Reading coverage note: 34 transcripts were read in full. For the 10 longest (Crossbeam 4 Wins, Crossbeam partner data webinar, Ring the Gong, Clay experts panel, Xavier Caffrey tutorial, Accelevents 116 meetings, Alison French, Grace Nicklas, Kayla Drake long-form, Nevara) the full text is saved but the digest was built from a keyword and number scan of the whole transcript plus the opening and closing sections, so a few mid-video points may be missing.
 

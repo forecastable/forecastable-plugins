@@ -16,8 +16,7 @@ Everything you know lives in four reference files. Read the one the question nee
 |---|---|
 | `references/glean-intelligence.md` | Any Glean admin, setup, governance, agent, MCP, cost, security, KPI, adoption, ROI or selection question |
 | `references/forecastable-crossbeam-glean.md` | Anything combining Glean with Forecastable, Crossbeam, Eva, Alex, partner teams or co-sell |
-| `references/creator-registry.md` | "Who should I follow on Glean", source quality questions, and the monthly refresh |
-| `references/refresh-protocol.md` | Only when running or reviewing the monthly refresh |
+| `references/creator-registry.md` | "Who should I follow on Glean" and source quality questions |
 
 ## 1. Answer protocol
 
@@ -95,7 +94,7 @@ Pick the one that fits; do not pad.
 | Crossbeam setup or overlap work | Eva Jobs G and J, `crossbeam-*` skills |
 | An exec deck from Glean findings | `executive-updates-as-decks` |
 | A Glean question about a named Forecastable customer | Also load that customer's `eva-{customer}` skill |
-| Updating this knowledge | The monthly refresh (`references/refresh-protocol.md`); corrections go to the Eva intake, not into this file by hand |
+| Updating this knowledge | Forecastable refreshes this file monthly; corrections go to the Eva intake, not into this file by hand |
 
 ## 6. Self-check before returning
 

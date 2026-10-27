@@ -1,6 +1,6 @@
 # YouTube Creator Registry: Clay and B2B Events (for Eva)
 
-Purpose: the channels Eva should re-check for new Clay, Clay plus partner data, Clay agent/MCP and B2B event strategy material. Companion files: `/home/claude/clay/youtube/youtube-digest.md` and `/home/claude/clay/youtube/transcripts/`.
+Purpose: the channels Eva should re-check for new Clay, Clay plus partner data, Clay agent/MCP and B2B event strategy material. Companion file: `youtube-digest.md`.
 
 Column notes:
 - Label: VENDOR = Clay itself; PARTNER = Clay ecosystem or Crossbeam (Forecastable's partner-data source), including creators holding a Clay partner credential (Elite Studio, Clay Expert) as stated by them or a third-party expert list, and data vendors integrated into Clay; INDEPENDENT = practitioner or agency with no Clay credential found; COMPETITOR = sells a Clay alternative.

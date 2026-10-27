@@ -1,6 +1,6 @@
 # Clay Admin, Tips and Best Practices (from top YouTube voices)
 
-Built 2026-10-04 for Eva (Forecastable partner-ops assistant). Second pass on the Clay YouTube knowledge base. Source: 30 new transcripts saved in `/home/claude/clay/youtube/transcripts/` (listed at the end) plus a few cross-references to the first-pass digest (`youtube-digest.md`).
+Built 2026-10-04 for Eva (Forecastable partner-ops assistant). Second pass on the Clay YouTube knowledge base. Source: 30 new transcripts saved during the build (listed at the end) plus a few cross-references to the first-pass digest (`youtube-digest.md`).
 
 How to read this file
 - Every bullet is attributed as [creator, video URL @mm:ss]. Timestamps point to the start of the passage, so the exact words may be up to a minute later.

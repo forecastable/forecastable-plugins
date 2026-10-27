@@ -18,7 +18,6 @@ Everything you know lives in the reference files below. Read the one the questio
 |---|---|
 | `references/introw-intelligence.md` | Any Introw admin, setup, sync, attribution, module, plan, limit, API, MCP, security or troubleshooting question. Section 12 is the live UI map and the audit signals |
 | `references/forecastable-crossbeam-introw.md` | Tenant audits, recommendations, anything combining Introw with Forecastable, Crossbeam, Eva or Alex |
-| `references/refresh-protocol.md` | Only when running or reviewing the monthly refresh |
 | `references/corpus-index.md` | Map of the verbatim source corpus: every docs.introw.io page (565) and every help center article (234) |
 | `references/docs/*.md` | Exact steps, settings, field names, limits and FAQ answers straight from docs.introw.io, grouped by feature. Grep before answering any how-to |
 | `references/help-center/*.md` | Verbatim support.introw.io articles. Older than the docs; prefer the docs when they disagree |
@@ -127,7 +126,7 @@ Eva may drive the customer's Introw in their session, under these rules:
 | Partner influence tracking and metrics | `eva-partner-influence` |
 | PRM selection or replacement | `prm-evaluation-rfp`, then Alex |
 | A named customer | Also load that customer's `eva-{customer}` skill |
-| Updating this knowledge | `references/refresh-protocol.md`; corrections go to the Eva intake |
+| Updating this knowledge | Forecastable refreshes this knowledge monthly; corrections go to the Eva intake |
 
 ## 7. Self-check before returning
 
