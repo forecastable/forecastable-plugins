@@ -90,7 +90,7 @@ Pick the one that fits; do not pad.
 
 | Ask | Route |
 |---|---|
-| Partner accountability work that uses Glean evidence | Eva Job L (`forecastable-eva-partner-manager-assistant` / `forecastable-eva`) |
+| Partner accountability work that uses Glean evidence | Eva Job L (`eva-job-l-glean`, through `use-eva`) |
 | Crossbeam setup or overlap work | Eva Jobs G and J, `crossbeam-*` skills |
 | An exec deck from Glean findings | `executive-updates-as-decks` |
 | A Glean question about a named Forecastable customer | Also load that customer's `eva-{customer}` skill |

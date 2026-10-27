@@ -84,7 +84,7 @@ Examples of asks this skill handles: "Are we ISVA eligible?", "Why are our ACE o
 | Ask | Route |
 |---|---|
 | Comparing AWS with another hyperscaler | Load the other cloud's skill too, and `cross-cloud-intelligence.md` |
-| Executing the plan, tracking follow-through, drafting seller outreach | Eva Job M (`forecastable-eva-partner-manager-assistant` / `forecastable-eva`) |
+| Executing the plan, tracking follow-through, drafting seller outreach | Eva, through `use-eva` (`EVA core` and the job skills in Forecastable) |
 | The strategic call, exec or board framing, MDF budget argument | Alex |
 | Account mapping against AWS customers | Crossbeam Open Data Partners, `crossbeam-*` skills |
 | A co-sell playbook with an AWS seller team | `cosell-playbook-generator` |

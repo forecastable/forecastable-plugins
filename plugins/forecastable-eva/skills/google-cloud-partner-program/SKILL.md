@@ -84,7 +84,7 @@ Examples of asks this skill handles: "What tier are we on track for?", "Can we l
 | Ask | Route |
 |---|---|
 | Comparing Google Cloud with another hyperscaler | Load the other cloud's skill too, and `cross-cloud-intelligence.md` |
-| Executing the plan, tracking follow-through, drafting seller outreach | Eva Job M (`forecastable-eva-partner-manager-assistant` / `forecastable-eva`) |
+| Executing the plan, tracking follow-through, drafting seller outreach | Eva, through `use-eva` (`EVA core` and the job skills in Forecastable) |
 | The strategic call, exec or board framing, MDF budget argument | Alex |
 | Account mapping against Google Cloud customers | Crossbeam Open Data Partners, `crossbeam-*` skills |
 | A co-sell playbook with a Google Cloud seller team | `cosell-playbook-generator` |

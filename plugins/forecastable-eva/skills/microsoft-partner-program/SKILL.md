@@ -84,7 +84,7 @@ Examples of asks this skill handles: "Are we IP co-sell eligible?", "Does this p
 | Ask | Route |
 |---|---|
 | Comparing Microsoft with another hyperscaler | Load the other cloud's skill too, and `cross-cloud-intelligence.md` |
-| Executing the plan, tracking follow-through, drafting seller outreach | Eva Job M (`forecastable-eva-partner-manager-assistant` / `forecastable-eva`) |
+| Executing the plan, tracking follow-through, drafting seller outreach | Eva, through `use-eva` (`EVA core` and the job skills in Forecastable) |
 | The strategic call, exec or board framing, MDF budget argument | Alex |
 | Account mapping against Microsoft customers | Crossbeam Open Data Partners, `crossbeam-*` skills |
 | A co-sell playbook with a Microsoft seller team | `cosell-playbook-generator` |

@@ -157,9 +157,9 @@ saving). Cookbook: intelligence section 5.
 
 | Ask | Route |
 |---|---|
-| Partner accountability, plan chase, rituals using Zoho outcomes | Eva core (`forecastable-eva`) |
+| Partner accountability, plan chase, rituals using Zoho outcomes | Eva, through `use-eva` (`eva-job-c-accountability` and `EVA core`) |
 | A named customer | Also load `eva-{customer}` and `customers/{customer}.md` |
-| Writing Zoho outcomes into Forecastable plan goals, milestones or tasks | Forecastable MCP via `forecastable-eva`; this skill supplies the numbers |
+| Writing Zoho outcomes into Forecastable plan goals, milestones or tasks | Forecastable MCP via `use-eva` and `eva-forecastable-mcp-runbook`; this skill supplies the numbers |
 | Crossbeam account mapping on top of Zoho CRM | Eva Crossbeam jobs and `crossbeam-*` skills |
 | HubSpot or Salesforce questions for a customer that also runs them | `hubspot-partner-ops-intelligence`, `salesforce-prm-intelligence` |
 | Email deliverability, Zoho Mail sending limits, Engage from Zoho inboxes | Forecastable support and Alex |

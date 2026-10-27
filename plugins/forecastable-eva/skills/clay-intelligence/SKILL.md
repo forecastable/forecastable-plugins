@@ -100,7 +100,7 @@ Record the path used in the customer's stack profile.
 
 | Ask | Route |
 |---|---|
-| Partner accountability, chase, rituals | Eva core (`forecastable-eva`) |
+| Partner accountability, chase, rituals | Eva, through `use-eva` (`eva-job-c-accountability` and `EVA core`) |
 | Crossbeam setup, overlaps, offline partner loads, data activation | `crossbeam-*` skills, Eva Job N |
 | HubSpot properties and attribution design | `forecastable-hubspot-setup`, `eva-partner-influence` |
 | Cold outbound copy and Instantly campaigns | `cold-outbound`, `forecastable-outbound-runbook` |

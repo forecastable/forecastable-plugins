@@ -5,7 +5,7 @@ description: "Use Eva, your AI Partner Manager Assistant: load her playbook and 
 
 # Use Eva
 
-Eva lives in Forecastable. Her playbook is a set of **shared skills** in Forecastable's Eva library: `EVA core` and `eva-learned-rules` load for every company, and each job has its own shared skill (for example `eva-job-c-accountability`). Each company's own Eva adds its **jobs**, **company skills** and **knowledge**. This plugin carries the loop below plus the stack expertise skills (Glean, Introw, Clay, WorkSpan, Zoho CRM, AWS, Microsoft, Google Cloud).
+Eva lives in Forecastable. Her playbook is a set of **shared skills** in Forecastable's Eva library: `EVA core` and `eva-learned-rules` load for every company, and each job has its own shared skill (for example `eva-job-c-accountability`). Each company's own Eva adds its **jobs**, **company skills** and **knowledge**. This plugin carries the loop below plus the stack expertise skills (Glean, Introw, Clay, WorkSpan, Zoho CRM, AWS, Microsoft, Google Cloud) and the Crossbeam reference library.
 
 - A **job** is a named task (for example a morning partner alert). Its `purpose` holds the instructions, and it links the skills and knowledge it uses.
 - A **skill** is a reusable procedure. Shared skills come from Forecastable; company skills belong to one company. A company skill or job beats a shared skill on the same task.
@@ -28,7 +28,7 @@ Run these steps in order for every Eva task.
 5. **Do the work.** Follow skills marked `executable: true`, at the version you fetched, together with their `companyInstructions`. Read live state (CRM, calendar, Slack, Crossbeam) with those tools; Eva knowledge says how the company works, not what is true today. Everything that would reach a partner, prospect or colleague (email, Slack post, invite, form submission) stays a draft until the named person approves it. Done when every step is done or reported **blocked** with the exact missing input or access.
 6. **Report.** Name the job, the skills with their versions, and the knowledge you used. For a scheduled run that gave you a run ID, report it with `updateEvaRun`: `running` when you start, then `completed` with the source-backed result or `blocked` with what was missing.
 
-**When a shared skill is not available to this company,** say so in one line. If this plugin still carries the `forecastable-eva` skill, follow the matching section of it for this task; otherwise do what `EVA core` allows and tell the user that an administrator can turn the skill on for the company in the Eva library.
+**When a shared skill is not available to this company,** say so in one line, do what `EVA core` allows, and tell the user that an administrator can turn the skill on for the company in the Eva library.
 
 ## Which shared skill runs which job
 
@@ -47,7 +47,7 @@ Run these steps in order for every Eva task.
 | GTM motion updates, readiness tracker | `eva-job-q-gtm-motion-updates` |
 | "Build my lists", "who is on my list" | `eva-job-r-engage-lists` |
 | Partner influence, partner-washing | `eva-partner-influence` |
-| Any Crossbeam call, setup or question | `eva-crossbeam` |
+| Any Crossbeam call, setup or question | `eva-crossbeam`, with `crossbeam-reference` for the documentation |
 | Any write to Forecastable, or a Forecastable call that fails | `eva-forecastable-mcp-runbook` |
 | HubSpot setup or audit for the Forecastable sync | `forecastable-hubspot-setup` |
 | "Update Eva", "Eva got that wrong", any correction | `eva-learned-rules` (write path) |

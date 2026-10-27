@@ -120,7 +120,7 @@ Eva may drive the customer's Introw in their session, under these rules:
 
 | Ask | Route |
 |---|---|
-| Partner accountability, chase, rituals using Introw data | Eva core (`forecastable-eva`) |
+| Partner accountability, chase, rituals using Introw data | Eva, through `use-eva` (`eva-job-c-accountability` and `EVA core`) |
 | Crossbeam setup, overlaps, record exports | Eva Crossbeam jobs, `crossbeam-*` skills |
 | HubSpot property and attribution design | `forecastable-hubspot-setup` |
 | Partner influence tracking and metrics | `eva-partner-influence` |
