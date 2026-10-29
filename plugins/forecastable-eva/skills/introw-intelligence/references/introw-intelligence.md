@@ -444,7 +444,7 @@ Roadmap directions (no dates) [S31]: autonomous partner onboarding; end-to-end p
 
 - Blog: very high publishing cadence since late 2025 (often daily in Aug/Sept 2026), heavily SEO/"best X alternatives" listicles plus guides on channel conflict, referral programs, MDF, SPIFFs, attribution, headless partnerships, MCP skills. Full titles and dates are in [S146][S147]. Selected: "Headless Partnerships" (23 Jul 2026), "MCP for Partnerships: 31 Claude skills" (21 Jul 2026), "Partner Attribution" (19 Jul 2026), "Ecosystem Led Growth" (15 Sep 2026), "Through-Channel Marketing Automation" (16 Sep 2026), "PRM vs CRM" (19 Aug 2026), "The 4 ways to manage your B2B partners in Salesforce and attribute revenue" (30 Apr 2025), "The 3 ways to manage your partners in HubSpot and attribute revenue" (3 Jun 2024), "Partner Deals Have a 32% bigger deal size and 2.8X higher win rate" (14 Jan 2024) [S146][S147].
 - Resources hub also includes events, templates (e.g., channel partner profile template), whitepapers, glossary, video library [S1].
-- Video library series "Partner Plays" and "Partner with AI" (short 1 to 2 minute clips, Jul to Dec 2025) with guests Eva Fayemi (Bond Agency), Tim Cleary (Coder), Phil Laslett (Move Forward Consulting), Alex Richards (Connected Revenue), Maxime Imbert, Franz-Josef Schrepf (OpusClip), KaraLynn Lewis (Partnership Advisory), Eleanor Thompson (Branchworks), Rob Moyer (Gong), Will Taylor (AudienceLed), Graham Collins (QuotaPath), J. Johnson [S152].
+- Video library series "Partner Plays" and "Partner with AI" (short 1 to 2 minute clips, Jul to Dec 2025) with guests Eva Fayemi (Bond Agency), Tim Cleary (Coder), Phil Laslett (Move Forward Consulting), Alex Richards (Connected Revenue), Maxime Imbert, Franz-Josef Schrepf (OpusClip), KaraLynn Lewis (Partnership Advisory), Eleanor Thompson (Branchworks), Rob Moyer (Gong), Will Taylor (AudienceLed), J. Johnson [S152].
 - YouTube channel: youtube.com/channel/UC6efoTpk_pJZLWPx7PV6CeQ (found via search; not crawled) [S153].
 - LinkedIn: company page linkedin.com/company/introw; CEO Andreas Geamanu posts on partnerships and product launches (e.g., AI partner support agent launch) [S154][S112]. LinkedIn pages were not fetchable (robots).
 - Blog guest content: "A Masterclass in Modern B2B SaaS Partnerships: Martin Scholz" (26 Jan 2026) [S146].
@@ -592,7 +592,6 @@ Full page index (516 product pages + release notes + API) is in [S16][S17][S18][
 
 ### 10.3 URLs that could not be fetched
 - https://www.introw.io/about (404; correct page is /about-us, fetched)
-- https://quotapath.introw.io/ (fetch permission not granted in time; existence of this portal UNVERIFIED)
 - https://www.linkedin.com/products/introw-io/ (blocked by robots.txt)
 - https://trust.introw.io (loaded, but certification details are JS-rendered and not retrievable)
 - No support.introw.io or docs.introw.io page returned an error. Most individual support.introw.io articles were enumerated but not opened, because the docs.introw.io equivalents (newer) were read instead.
@@ -603,7 +602,7 @@ Full page index (516 product pages + release notes + API) is in [S16][S17][S18][
 
 ## 12. Observed in a live tenant (admin session, 2026-09-29) [L1]
 
-Walked read-only in a customer's production Introw org (Pro plan) as an Admin user. Nothing was changed. Customer-specific data is deliberately left out of this file; only product behavior is recorded. Where this section and the docs disagree, this section is newer ground truth for the UI, the docs remain the reference for behavior.
+Walked read-only in a production Introw org as an Admin user. Nothing was changed. Customer-specific data is deliberately left out of this file; only product behavior is recorded. Where this section and the docs disagree, this section is newer ground truth for the UI, the docs remain the reference for behavior.
 
 ### 12.1 Navigation map (vendor app, app.introw.io)
 Left nav, top to bottom, with routes:
@@ -654,8 +653,8 @@ Partner detail (`/partners/{id}`): tabs Overview, Analytics, People, Opportuniti
 ### 12.3 Corrections to the public-doc picture
 - Webhooks: the Developers area has a Webhooks tab marked "Coming soon". Outbound webhooks are planned, not live, as of 2026-09-29. This resolves the UNVERIFIED item in 4.14 and 8.19.
 - Developers also has a Logs tab (API request logs) and an API Credits meter.
-- Plan labels do not tell you what an org is entitled to. A Pro-plan org was confirmed by Introw (2026-09-29) to have Salesforce access even though the public pricing page lists Pro as HubSpot only; its Salesforce tile showed Interrupted because the connection dropped, not because of the plan. Never diagnose an Interrupted or broken integration as a plan issue from the pricing page. Treat Interrupted as a dropped connection: reconnect first (three-dots menu, same integration user, accept all scopes), and ask Introw about entitlement only if reconnect is refused.
-- Crossbeam on Pro: a Pro-plan org can hold a live Crossbeam connection (likely grandfathered from before the current price book, connection dated Dec 2024). Do not assume Pro means no Crossbeam; check the tile.
+- Plan labels do not tell you what an org is entitled to. Introw confirmed (2026-09-29) that a Pro-plan org can have Salesforce access even though the public pricing page lists Pro as HubSpot only. Never infer entitlements from the plan name; read the integration tiles.
+- Crossbeam on Pro: a Pro-plan org can hold a live Crossbeam connection (likely grandfathered from an earlier price book). Do not assume Pro means no Crossbeam; check the tile.
 - The Crossbeam integration page shows: who connected it and when, the customer's Crossbeam plan (e.g. Enterprise), Record Export Usage as used / allowance with a percentage bar, days until reset, and the Crossbeam contract term; plus Disconnect and View in Crossbeam. This is the fastest place to see how much of a customer's Crossbeam record-export allowance is gone.
 - Salesforce "Configure" on an Interrupted connection does not open a settings page; the fix is reconnect (three-dots menu) per the troubleshooting doc [S40].
 - Opportunity overview loads deals from the connected CRM; with the CRM connection Interrupted, pipeline data in Introw is stale (it shows the last synced state and new CRM changes do not arrive).
@@ -834,5 +833,4 @@ Partner detail (`/partners/{id}`): tabs Overview, Analytics, People, Opportuniti
 - [S153] https://www.youtube.com/channel/UC6efoTpk_pJZLWPx7PV6CeQ (search result only)
 - [S154] https://www.linkedin.com/in/andreas-geamanu/ (search result only)
 - [S155] https://forecastable.com/partnerstack-alternatives/
-- [S156] https://www.quotapath.com/partners/
-- [L1] Live admin walk-through of a customer Introw org (Pro plan), app.introw.io, 2026-09-29, read-only.
+- [L1] Live admin walk-through of an Introw org, app.introw.io, 2026-09-29, read-only.

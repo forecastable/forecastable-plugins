@@ -555,7 +555,7 @@ anything about the customer's own ecosystem. Do not use it as a data source for 
 `Forecastable: ` followed by the job and a short description, e.g. `Forecastable: J audit, top
 partners`. Never create an unstamped list. This is how Crossbeam attributes usage it did not
 originate, and how our 90-day outcome report proves what we did. Server-side, every Crossbeam call
-is also logged per tenant with job, tool and date (Pensotti build item). Stamps carry no customer
+is also logged per tenant with job, tool and date. Stamps carry no customer
 data beyond what the customer already sees in their own Crossbeam.
 
 **19. `get_ecosystem_activity` is the partner deal feed, and it has no date filter.** It returns
