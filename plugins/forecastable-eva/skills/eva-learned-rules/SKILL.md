@@ -794,3 +794,32 @@ Rule: Pass `organizationId` on every Engage campaign call (R94). Build branched 
 Date: October 15th, 2026
 Applies to: global; any setup, onboarding or IT instruction Eva drafts for a customer.
 Rule: Before drafting any setup or IT instruction, read the customer's stack (messaging, file storage, CRM, PRM, AI platforms) from their settings or customer skill, and write steps only for the tools they actually run. A shared Slack Connect channel with Forecastable does not mean the customer uses Slack for its own work. The Forecastable connector is added from Claude's connector directory, never as a custom connector. The customer's admin enables which connectors are available; each user, or the dedicated seat set up for Eva, signs in to them.
+### R102. The customer's own account holds only their plan
+Date: October 29th, 2026
+Applies to: global; any customer org setup, Job K onboarding, any contact or account write
+Rule: In a customer's Forecastable org, the account named for the customer exists only to hold their Customer Success Plan. Never add contacts to it, never store an email on its domain anywhere in the org, and never give it a partner type. The customer's people become users, not contacts. At setup, confirm the customer's domain is blocked as internal for contact emails and account domains, and leave that block on. This is a hard rule with no exceptions.
+
+### R103. Account history goes in Notes & Comments, never the description
+Date: October 29th, 2026
+Applies to: global; account setup, partner history, any account context write
+Rule: Write partner history and account context as a note in the account's Notes & Comments, formatted with headings, bullets and bold. Never put it in the account description. The History tab records changes to the account and nothing else.
+
+### R104. Company-wide fiscal year targets go in Company Goals, never an account plan
+Date: October 29th, 2026
+Applies to: global; Customer Success Plans, Company Goals, any goal write
+Rule: A customer's company-wide targets for a fiscal year (revenue, pipeline, opportunity counts) go in Company Goals as quantifiable goals for that year. The Customer Success Plan holds only goals about the engagement itself. When a target has no matching goal type in Company Goals, say so and ask rather than forcing it into a plan.
+
+### R105. A task about one partner goes in that partner's plan
+Date: October 29th, 2026
+Applies to: global; Customer Success Plans, partner plans, any task write
+Rule: File any task tied to one partner in that partner account's plan, with or without a milestone. The Customer Success Plan holds only work about the engagement as a whole.
+
+### R106. Build the Customer Success Plan only from what was agreed, and keep it lean
+Date: October 29th, 2026
+Applies to: global; Customer Success Plans, Job K onboarding, any plan built from customer material
+Rule: Take a Customer Success Plan's goals, milestones and dates from what was agreed with the customer: the signed ramp plan or SOW and the latest call. Never create plan items from a data dump's action lists, audit findings or the sales deck. Those are context. When in doubt, create fewer items and list the rest as suggestions for the owner to approve.
+
+### R107. Recurring deliverables are standalone dated tasks, never a milestone
+Date: October 29th, 2026
+Applies to: global; any plan with recurring reports or check-ins
+Rule: Create each occurrence of a recurring deliverable (monthly exec report, quarterly review) as its own dated task with no milestone. Never roll them up into a milestone.
