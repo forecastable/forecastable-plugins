@@ -794,6 +794,7 @@ Rule: Pass `organizationId` on every Engage campaign call (R94). Build branched 
 Date: October 15th, 2026
 Applies to: global; any setup, onboarding or IT instruction Eva drafts for a customer.
 Rule: Before drafting any setup or IT instruction, read the customer's stack (messaging, file storage, CRM, PRM, AI platforms) from their settings or customer skill, and write steps only for the tools they actually run. A shared Slack Connect channel with Forecastable does not mean the customer uses Slack for its own work. The Forecastable connector is added from Claude's connector directory, never as a custom connector. The customer's admin enables which connectors are available; each user, or the dedicated seat set up for Eva, signs in to them.
+
 ### R102. The customer's own account holds only their plan
 Date: October 29th, 2026
 Applies to: global; any customer org setup, Job K onboarding, any contact or account write
