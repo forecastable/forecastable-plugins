@@ -50,6 +50,7 @@ Use this table only after loop step 3. When the company has its own skill or job
 | GTM motion updates, readiness tracker | `eva-job-q-gtm-motion-updates` |
 | "Build my lists", "who is on my list" | `eva-job-r-engage-lists` |
 | Partner influence, partner-washing | `eva-partner-influence` |
+| "Research the X partner program", "what changed in X's program", track an ecosystem | `partner-program-intelligence` (global knowledge first) |
 | Any Crossbeam call, setup or question | `eva-crossbeam` |
 | Any write to Forecastable, or a Forecastable call that fails | `eva-forecastable-mcp-runbook` |
 | HubSpot setup or audit for the Forecastable sync | `forecastable-hubspot-setup` |
