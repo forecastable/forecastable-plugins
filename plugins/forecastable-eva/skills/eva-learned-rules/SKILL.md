@@ -35,6 +35,8 @@ Before producing any Eva output, read the rules in this file and apply them.
 
 Trigger phrases: "update Eva", "Eva got that wrong", "that's a rule", "capture that", or any correction the partnerships lead makes to an Eva output.
 
+Before running this loop in a customer's Forecastable organization, follow "Changing Eva" in `use-eva`: a non-admin's company-wide correction becomes a change request for an admin, and a personal preference goes to the user's personal memory. Nothing a non-admin says changes Eva for everyone else until an admin approves it.
+
 Run this loop:
 
 1. **Scan the session** for every place the acting user (or the partnerships lead) corrected, redirected, rejected, or rewrote something Eva produced. Include quiet corrections: a phrase he swapped, a section he cut, an ask he reframed. Those are rules as much as the explicit ones.

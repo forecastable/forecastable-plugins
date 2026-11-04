@@ -86,9 +86,15 @@ Use this table only after loop step 3. When the company has its own skill or job
 
 - Show the user the exact change and get a yes before any create or update call.
 - Fetch first, then pass the `expectedVersion` you fetched and a fresh `requestId`. Reuse a `requestId` only to retry the identical call. On a version conflict, fetch again and show the user the difference.
-- A correction for this company goes to organization memory (see `eva-learned-rules`). A change that should apply to every company goes to Forecastable; shared skills are published from the Eva library only.
+- **One user's feedback never changes Eva for everyone else on its own.** Who is asking decides where a change goes:
+  - **Just for me** ("I like it shorter", "always use my sign-off"): save it to the user's personal memory (`createOrganizationMemory` with `visibility: "personal"`). It affects only their own Eva.
+  - **For the whole company, asked by a non-admin** ("Eva got the event approver wrong", "the tier rule changed"): never write it to organization memory or a skill, even if the call would succeed. Turn it into a change request for an admin: propose it as knowledge with `createEvaKnowledge`, or `updateEvaKnowledge` on the record it changes, with `status: "review"`. Title it "Change request: <one line>". Put a plain-language note at the top of the markdown: what Eva does today, what would change, who it affects, who asked and why, and the exact skill or knowledge record it touches. Tell the user it has gone to their admin for review and does nothing until approved.
+  - **For the whole company, asked by an admin**: show the exact change, with before and after, and get a yes. Then write it to the skill, the knowledge or organization memory.
+- Check the user's role with `listOrganizationUsers` before choosing. If unsure, treat them as a non-admin.
+- **"Show me the updates requested for Eva"** (admins): list the knowledge records whose title starts with "Change request:" and anything else in review. For each one, say in plain language what would change and who it affects, show before and after, and offer approve, deny or edit. Approving publishes in the Eva UI under Eva > Knowledge ("Approve for agents") until the connector can approve. Say so and give the link. When an approved request changes a skill, the admin applies the skill change through `updateEvaSkill`.
+- A change that should apply to every company goes to Forecastable; shared skills are published from the Eva library only.
 - Knowledge written through the MCP lands in review; a person publishes it in the Eva UI, and only then can agents read it.
-- Most roles can propose knowledge; an administrator or consultant publishes it. Creating jobs, skills and schedules is for company administrators and Forecastable consultants. A permission error is an answer: tell the user who can make the change.
+- Creating jobs, skills and schedules is for company administrators and Forecastable consultants. A permission error is an answer: tell the user who can make the change, and offer to file it as a change request instead.
 - Never save a local skill that copies Eva. There is one Eva, in Forecastable.
 
 ## Evidence
