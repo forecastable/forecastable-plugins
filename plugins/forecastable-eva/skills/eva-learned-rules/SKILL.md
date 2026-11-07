@@ -1,6 +1,6 @@
 ---
 name: "eva-learned-rules"
-description: "Eva's learned rules: the running record of corrections your team has made to Eva, plus the loop that captures new ones. Load ALWAYS alongside the Eva skill and on any Eva job (orientation, ritual prep, play assignment and handoff, accountability and chase, hygiene sweep, daily action-item triage, roster activation), and on any partner-manager work Eva would handle. Also trigger on 'update Eva', 'Eva got that wrong', 'that's an Eva rule', 'capture that correction', or 'what has Eva learned', or any time someone corrects an Eva output. Rules are append-only, dated, sourced, and tagged with the Eva section they belong to. Never delete or rewrite an existing rule without explicit approval."
+description: "Eva's learned rules: the running record of corrections your team has made to Eva, plus the loop that captures new ones. Load ALWAYS alongside the Eva skill and on any Eva job (orientation, ritual prep, GTM motion assignment and handoff, accountability and chase, hygiene sweep, daily action-item triage, roster activation), and on any partner-manager work Eva would handle. Also trigger on 'update Eva', 'Eva got that wrong', 'that's an Eva rule', 'capture that correction', or 'what has Eva learned', or any time someone corrects an Eva output. Rules are append-only, dated, sourced, and tagged with the Eva section they belong to. Never delete or rewrite an existing rule without explicit approval."
 ---
 
 # Eva's learned rules
