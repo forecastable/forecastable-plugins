@@ -1,6 +1,6 @@
 {
   "name": "forecastable-eva",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Eva, your AI Partner Manager Assistant. Runs from Forecastable: her jobs, skills, knowledge and schedules live there and load through the Forecastable MCP. Turns partner decisions into work that actually happens: meeting prep, GTM motion assignment and forwardable handoffs, partner success plans, commitment tracking and chases, staleness sweeps, and a daily triage of action items into plans. Drafts everything for your approval and never sends on your behalf.",
   "author": {
     "name": "Forecastable"

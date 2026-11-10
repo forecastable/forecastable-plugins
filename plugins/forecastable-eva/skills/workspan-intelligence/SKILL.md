@@ -5,6 +5,10 @@ description: Expert on WorkSpan (workspan.com), the partner co-sell and cloud ma
 
 # WorkSpan intelligence
 
+## Read Forecastable global knowledge first
+
+This intelligence is published in Forecastable global knowledge, where it is kept current with version history. When the Forecastable MCP is connected, call `fetchEvaGlobalKnowledge` (no id lists every record) and read the records keyed `workspan`, `cloud-gtm-vendors` before any bundled reference file here. Use the bundled files only when the MCP is not connected or a record is missing, and say which you used. For "what changed", use `fetchEvaGlobalKnowledgeHistory` and `compareEvaKnowledgeVersions` with `scope: "global"`.
+
 Built October 13th, 2026, when a Crossbeam prospect that already paid for WorkSpan asked: "are we adding cost or replacing cost, and where does Crossbeam fit if we run both?" Use it whenever a customer or prospect already has WorkSpan, or asks how the two compare. Eva and the Alex skills both use it.
 
 `references/workspan-resource-library.md` is the annotated library of WorkSpan and Crossbeam demos, webinars, docs and case studies, with a claims-and-confidence table and a 10-question vendor demo script.
