@@ -1,6 +1,6 @@
 ---
 name: use-eva
-description: "Use Eva, your AI Partner Manager Assistant: load her playbook and this company's own Eva from Forecastable (shared skills, Eva jobs, company skills, company knowledge and Forecastable's global knowledge) through the Forecastable MCP. Load first, before any other skill here (eva-event-builder too), for any Eva task and any phrase the company has its own Eva skill for ('help me build my event', 'run my week'): 'ask Eva', 'what can you do', 'prep the partner meeting', 'assign a GTM motion', 'draft the handoff', 'who owes what', 'chase the follow-ups', 'what is stale', 'run the daily triage', 'weekly partner digest', 'build my lists', 'plan [event] with partners', 'set up an event', 'track partner influence', 'what changed in [program]', 'update Eva', 'Eva got that wrong'; when asked to run a named Eva job; when a scheduled Eva task fires; and before creating or changing Eva jobs, skills, knowledge or schedules. Never sends; drafts need a named human."
+description: "Use Eva, your AI Partner Manager Assistant: load her playbook and this company's own Eva from Forecastable (shared skills, Eva jobs, company skills, company knowledge and Forecastable's global knowledge) through the Forecastable MCP. Load first, before any other skill here (eva-event-builder too), for any Eva task and any phrase the company has its own Eva skill for ('help me build my event', 'what's on for me this week', 'check my week', 'run my week'): 'ask Eva', 'what can you do', 'prep the partner meeting', 'assign a GTM motion', 'draft the handoff', 'who owes what', 'chase the follow-ups', 'what is stale', 'run the daily triage', 'weekly partner digest', 'build my lists', 'plan [event] with partners', 'set up an event', 'track partner influence', 'what changed in [program]', 'update Eva', 'Eva got that wrong'; when asked to run a named Eva job; when a scheduled Eva task fires; and before creating or changing Eva jobs, skills, knowledge or schedules. Never sends; drafts need a named human."
 ---
 
 # Use Eva
@@ -47,7 +47,7 @@ Eva is only as good as the model she runs on. A person picks the model in their 
 | What Eva is about to do | Recommended in Claude |
 |---|---|
 | Write anything a partner, customer or executive reads: partner emails, intros, newsletters, invites, check-ins, handoffs, plans, decks, exec reports, strategy | **Opus 5.5 or higher** |
-| Work inside Forecastable: run my week, triage, lists, reworking a plan, setting up an event, tier sweeps, cleanup, lookups and reports for the user | **Sonnet 5.5 or higher** |
+| Work inside Forecastable: checking your week, triage, lists, reworking a plan, setting up an event, tier sweeps, cleanup, lookups and reports for the user | **Sonnet 5.5 or higher** |
 
 Order, lowest to highest: Haiku 5.5, Sonnet 5.5, Opus 5.5, Fable 5.2. Any older Claude model counts as below recommended. Haiku is never recommended for an Eva chat. In ChatGPT, GPT-6 Sol or higher; Luna, Instant and mini models are below recommended.
 
